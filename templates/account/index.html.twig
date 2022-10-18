@@ -1,0 +1,140 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Bienvenue {{ app.user.firstname }} !
+{% endblock %}
+
+{% block content %}
+  <div class="Main_Container">
+    <section class="Perso_Section_Nav">
+      <div class="Personnal_Title_Container">
+        <h1 class="Perso_title">
+          Bonjour <b style="text-transform:uppercase;">
+            {{ app.user.firstname }}
+          </b> !
+        </h1>
+        <p>
+          Bienvenue dans votre espace personnel
+        </p>
+      </div>
+      <div class="Personnal_Nav_Container">
+        <h3>
+          Informations personnelles
+        </h3>
+        <hr />
+        <h4>
+          STATUT DE L'AGENT
+        </h4>
+        <ul>
+          <li><span class="Statut_List_Title">Catégorie :</span> C</li>
+          <li>
+            <span class="Statut_List_Title">Grade :</span> Agent de Maitrise
+          </li>
+          <li>
+            <span class="Statut_List_Title">Service affilié :</span> Reprographie
+            & Développement
+          </li>
+          <li>
+            <span class="Statut_List_Title">Poste occupé :</span> Infographiste/
+            Développer
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </section>
+    <section class="Perso_Section_Main">
+      <div class="Personnal_Main_Container">
+        <h3>
+          Tableau de bord
+        </h3>
+        <div class="Card_Group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                HEURES EFFECTUÉES
+              </h5>
+              <p class="card-text">
+                Ici vous pouvez consulter vos heures déjà effectués au sein de
+                votre collectivité.
+              </p>
+
+              <div class="Time_Left_Diag">
+                <div class="progress-circle" data-value="50" id="jauge">
+                  <div class="progress-masque">
+                    <div class="progress-barre"></div>
+                    <div class="progress-sup50"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                CONGÉS DISPONIBLES
+              </h5>
+              <p class="card-text">
+                Ici vous pouvez consulter vos congés déjà utilisés et effectuer
+                une demande auprès du service RH de votre collectivité.
+              </p>
+
+              <div class="Time_Left_Diag">
+                <div class="progress-circle" data-value="50" id="jauge">
+                  <div class="progress-masque">
+                    <div class="progress-barre"></div>
+                    <div class="progress-sup50"></div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="card-text">
+                <div class="mb-3">
+                  <button class="btn-primary btn"
+                    type="submit"
+                    id="connexion_submit">
+                    DEMANDER
+                  </button>
+                </div>
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                RECCUPÉRATIONS DISPONIBLE
+              </h5>
+              <p class="card-text">
+                Ici vous pouvez consulter vos congés déjà utilisés et effectuer
+                une demande auprès du service RH de votre collectivité.
+              </p>
+                            <div class="Time_Left_Diag">
+                <div class="progress-circle" data-value="50" id="jauge">
+                  <div class="progress-masque">
+                    <div class="progress-barre"></div>
+                    <div class="progress-sup50"></div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="card-text">
+                <div class="mb-3">
+                  <button class="btn-primary btn"
+                    type="submit"
+                    id="connexion_submit">
+                    DEMANDER
+                  </button>
+                </div>
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

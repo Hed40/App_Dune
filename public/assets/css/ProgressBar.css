@@ -1,0 +1,150 @@
+.progress-circle{
+  position: relative;             /* pour servir de référent */
+  box-sizing: border-box;         /* prise en compte bordure dans la dimension */
+  font-size: 12em;                 /* pour définir les dimensions */
+  width: 1em;                     /* fixe la largeur */
+  height: 1em;                    /* fixe la hauteur */
+  border-radius: 50%;             /* rendu aspect circulaire */
+  border: .15em solid #CDE;       /* couleur de fond de l'anneau */
+  background-color: #FFF;  
+}
+
+.progress-masque {
+  position: absolute;
+  width: 1em;                     /* 100% de la largeur */
+  height: 1em;                    /* 100% de la hauteur */
+  left: -.15em;                   /* décalage de la largeur bordure de la gauge */
+  top: -.15em;                    /* décalage de la largeur bordure de la gauge */
+  clip: rect(0, 1em, 1em, .5em);  /* par défaut seule la partie droite est visible */
+}
+
+.progress-circle[data-value^='5']:not([data-value='5']):not([data-value^='5.']) .progress-masque,
+.progress-circle[data-value^='6']:not([data-value='6']):not([data-value^='6.']) .progress-masque,
+.progress-circle[data-value^='7']:not([data-value='7']):not([data-value^='7.']) .progress-masque,
+.progress-circle[data-value^='8']:not([data-value='8']):not([data-value^='8.']) .progress-masque,
+.progress-circle[data-value^='9']:not([data-value='9']):not([data-value^='9.']) .progress-masque,
+.progress-circle[data-value^='100'] .progress-masque {
+  clip: rect(auto, auto, auto, auto);
+}
+
+.progress-barre,
+.progress-sup50 {
+  position: absolute;
+  box-sizing: border-box;         /* prise en compte bordure dans la dimension */
+  border-width: .15em;            /* largeur bordure de la gauge */
+  border-style: solid;
+  border-color: rgb(94, 26, 28);
+  border-radius: 50%;             /* rendu aspect circulaire */
+  width: 1em;                     /* largeur à 100% */
+  height: 1em;                    /* hauteur à 100% */
+  clip: rect(0, .5em, 1em, 0);
+}
+
+.progress-sup50 {
+    display: none;
+    clip: rect(0, 1em, 1em, .5em);
+  }
+
+  .progress-circle[data-value^='5']:not([data-value='5']):not([data-value^='5.']) .progress-sup50,
+.progress-circle[data-value^='6']:not([data-value='6']):not([data-value^='6.']) .progress-sup50,
+.progress-circle[data-value^='7']:not([data-value='7']):not([data-value^='7.']) .progress-sup50,
+.progress-circle[data-value^='8']:not([data-value='8']):not([data-value^='8.']) .progress-sup50,
+.progress-circle[data-value^='9']:not([data-value='9']):not([data-value^='9.']) .progress-sup50,
+.progress-circle[data-value^='1607'] .progress-sup50 {
+  display:block;
+}
+
+.progress-circle:after {
+    content: attr(data-value) "/1607";  /* récup. valeur de progression */
+    font-size: 0.15em;              /* taille de la font en % du parent */
+    height: 100%;                   /* centrage dans le parent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /*-- pour effet shadow intérieur --*/
+    /*border-radius: 50%;
+    box-shadow: 0 0 .5em rgba(0, 0, 0, .5) inset;*/
+  }
+
+.progress-circle[data-value="0"]   .progress-barre {transform: rotate(0.00deg)}
+.progress-circle[data-value="1"]   .progress-barre {transform: rotate(0.22deg)}
+.progress-circle[data-value="2"]   .progress-barre {transform: rotate(0.44deg)}
+.progress-circle[data-value="3"]   .progress-barre {transform: rotate(0.66deg)}
+.progress-circle[data-value="4"]   .progress-barre {transform: rotate(0.88deg)}
+.progress-circle[data-value="5"]   .progress-barre {transform: rotate(1.00deg)}
+.progress-circle[data-value="6"]   .progress-barre {transform: rotate(1.22deg)}
+.progress-circle[data-value="7"]   .progress-barre {transform: rotate(1.44deg)}
+.progress-circle[data-value="8"]   .progress-barre {transform: rotate(1.66deg)}
+.progress-circle[data-value="9"]   .progress-barre {transform: rotate(1.88deg)}
+.progress-circle[data-value="10"]  .progress-barre {transform: rotate(2.00deg)}
+.progress-circle[data-value="11"]  .progress-barre {transform: rotate(2.22deg)}
+.progress-circle[data-value="12"]   .progress-barre {transform: rotate(2.44deg)}
+.progress-circle[data-value="13"]   .progress-barre {transform: rotate(2.66deg)}
+.progress-circle[data-value="14"]   .progress-barre {transform: rotate(2.88deg)}
+.progress-circle[data-value="15"]   .progress-barre {transform: rotate(3.00deg)}
+.progress-circle[data-value="16"]   .progress-barre {transform: rotate(3.22deg)}
+.progress-circle[data-value="17"]   .progress-barre {transform: rotate(3.44deg)}
+.progress-circle[data-value="18"]   .progress-barre {transform: rotate(3.66deg)}
+.progress-circle[data-value="19"]   .progress-barre {transform: rotate(3.88deg)}
+.progress-circle[data-value="20"]   .progress-barre {transform: rotate(4.00deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="22"]   .progress-barre {transform: rotate(4.44deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+.progress-circle[data-value="21"]   .progress-barre {transform: rotate(4.22deg)}
+
+

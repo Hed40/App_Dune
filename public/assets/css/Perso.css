@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar,
+.navbar-collapse,
+.navbar-expand-lg {
+  display: flex;
+  background-color: rgb(94, 26, 28);
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  color: rgb(255, 247, 226);
+}
+
+.nav-item {
+  display: grid;
+}
+
+body {
+  max-width: 100vw;
+  max-height: 100vh;
+  background-color: rgb(94, 26, 28);
+  display: grid;
+  justify-items: center;
+}
+.mb-3,
+.mb-4,
+button {
+  display: grid;
+  justify-items: center;
+}
+
+.Main_Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100vw;
+  border-radius: 10px;
+  padding-top: 30px;
+  padding-right: 70px;
+  padding-left: 70px;
+  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+}
+
+.Personnal_Title_Container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 247, 226);
+  justify-items: left;
+  width: 500px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding-top: 30px;
+  padding-left: 70px;
+  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+  margin-bottom: 8px;
+}
+.Perso_Section_Nav {
+  display: flex;
+  flex-direction: column;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.Perso_Section_Main {
+  display: flex;
+  width: 70%;
+  min-width: 500px;
+  margin-bottom: 8px;
+}
+
+.Personnal_Nav_Container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 247, 226);
+  justify-items: left;
+  width: 500px;
+  min-height: 800px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding-top: 30px;
+  padding-right: 70px;
+  padding-left: 70px;
+  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+}
+
+.Personnal_Main_Container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: rgb(255, 247, 226);
+  justify-items: left;
+  width: 100%;
+  min-height: 800px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding-top: 30px;
+  padding-right: 70px;
+  padding-left: 70px;
+  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+}
+.Card_Group{
+  display: flex;
+  justify-content: space-between;
+  word-wrap: break-word;
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 30%;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid rgb(94, 26, 28);
+  border-radius: 10px;
+  margin: 8px;
+  background-color: rgb(255, 247, 226);
+  color: rgb(94, 26, 28);
+}
+
+#register_lastname,
+#register_firstname,
+#register_email,
+#register_password_first,
+#register_password_second {
+  width: 100%;
+}
+
+label.form-label.required,
+.inputEmail {
+  display: grid;
+  width: 100%;
+  justify-items: start;
+  color: rgb(94, 26, 28);
+  font-weight: normal;
+  font-size: medium;
+}
+
+.placeholder {
+  color: rgb(94, 26, 28);
+  font-weight: normal;
+  font-size: medium;
+}
+
+.btn,
+.btn-lg,
+.btn-primary,
+#register_submit,
+#connexion_submit {
+  width: 150px;
+  height: 50px;
+  margin-top: 15px;
+  background-color: rgb(94, 26, 28);
+  border: rgb(94, 26, 28);
+}
+
+.btn,
+.btn-lg,
+.btn-primary,
+.btn-primary:hover {
+  background-color: rgb(94, 26, 28);
+  border: rgb(94, 26, 28);
+}
+
+.form-select {
+  color: rgb(94, 26, 28);
+}
+
+option {
+  font-size: small;
+}
+
+#circle {
+  width: 300px;
+  height: 300px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 300px;
+  background: rgb(94, 26, 28);
+}
+
+.logo {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: rgb(94, 26, 28);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(94, 26, 28, 0.753);
+}
+
+ul{
+  list-style: circle;
+}
+
+.Statut_List_Title{
+  color: rgb(94, 26, 28);
+  font-weight:bold;
+  font-size: 1rem;
+}
+
+.Time_Left_Diag{
+  display: flex;
+  justify-content: center;
+}
