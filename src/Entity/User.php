@@ -39,6 +39,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Address::class)]
     private Collection $addresses;
 
+    #[ORM\Column(length: 255)]
+    private ?string $Categorie = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Grade = null;
+
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
@@ -166,6 +172,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $address->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCategorie(): ?string
+    {
+        return $this->Categorie;
+    }
+
+    public function setCategorie(string $Categorie): self
+    {
+        $this->Categorie = $Categorie;
+
+        return $this;
+    }
+
+    public function getGrade(): ?string
+    {
+        return $this->Grade;
+    }
+
+    public function setGrade(string $Grade): self
+    {
+        $this->Grade = $Grade;
 
         return $this;
     }
