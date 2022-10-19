@@ -105,21 +105,30 @@ button {
   padding-top: 30px;
   padding-right: 70px;
   padding-left: 70px;
-  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+  box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
 }
-.Card_Group{
-  display: flex;
+.card-deck-wrapper{
+  
   justify-content: space-between;
   word-wrap: break-word;
 }
+@media (min-width: 1250px) {
+  .card-deck-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    word-wrap: break-word;
+  }
 
+
+ }
 .card {
   position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 30%;
+ min-width: 32%;
   word-wrap: break-word;
   background-clip: border-box;
   border: 1px solid rgb(94, 26, 28);
