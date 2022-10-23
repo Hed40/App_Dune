@@ -5,8 +5,6 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\FieldDto;
 
 
 class UserCrudController extends AbstractCrudController
@@ -20,12 +18,14 @@ class UserCrudController extends AbstractCrudController
     {
         return [
 
-
+            
             TextField::new('lastname'),
             TextField::new('firstname'),
             TextField::new('email'),
             TextField::new('Categorie'),
-           TextField::new('Grade')
+            TextField::new('Grade'),
+            TextField::new('Service'),
+            TextField::new('Poste')
 
         ];
     }

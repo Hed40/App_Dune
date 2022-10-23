@@ -72,11 +72,23 @@ button {
 
 .Perso_Section_Main {
   display: flex;
+  flex-wrap: wrap;
   width: 70%;
   min-width: 500px;
   margin-bottom: 8px;
+  border-radius: 10px;
 }
 
+@media (min-width: 1250px) {
+  .Perso_Section_Main {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 70%;
+    min-width: 500px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+  }
+}
 .Personnal_Nav_Container {
   display: flex;
   flex-direction: column;
@@ -96,7 +108,6 @@ button {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  background-color: rgb(255, 247, 226);
   justify-items: left;
   width: 100%;
   min-height: 800px;
@@ -105,36 +116,91 @@ button {
   padding-top: 30px;
   padding-right: 70px;
   padding-left: 70px;
+  background-color: rgb(255, 247, 226);
   box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
 }
-.card-deck-wrapper{
-  
-  justify-content: space-between;
+
+.Perso_Section_Astreintes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  min-width: 500px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+}
+
+@media (min-width: 1250px) {
+  .Perso_Section_Astreintes {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 70%;
+    min-width: 500px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+  }
+}
+
+.Personnal_Astreinte_Historique {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-items: center;
+  width: 100%;
+  min-height: 800px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding-top: 30px;
+  padding-right: 70px;
+  padding-left: 70px;
+  background-color: rgb(255, 247, 226);
+  box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
+}
+
+.Personnal_Astreinte_Form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-items: left;
+  width: 100%;
+  min-height: 800px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding-top: 30px;
+  padding-right: 70px;
+  padding-left: 70px;
+  background-color: rgb(255, 247, 226);
+  box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
+}
+
+.card-deck-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   word-wrap: break-word;
 }
+
 @media (min-width: 1250px) {
-  .card-deck-wrapper{
+  .card-deck-wrapper {
     display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
     width: 100%;
-    justify-content: space-between;
     word-wrap: break-word;
   }
-
-
- }
+}
 .card {
   position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
- min-width: 32%;
+  min-width: 32%;
   word-wrap: break-word;
   background-clip: border-box;
   border: 1px solid rgb(94, 26, 28);
   border-radius: 10px;
   margin: 8px;
-  background-color: rgb(255, 247, 226);
+  background-color: rgb(255, 249, 235);
   color: rgb(94, 26, 28);
 }
 
@@ -166,18 +232,12 @@ label.form-label.required,
 .btn-lg,
 .btn-primary,
 #register_submit,
-#connexion_submit {
+#connexion_submit,
+.btn-primary:focus {
   width: 150px;
   height: 50px;
-  margin-top: 15px;
-  background-color: rgb(94, 26, 28);
-  border: rgb(94, 26, 28);
-}
-
-.btn,
-.btn-lg,
-.btn-primary,
-.btn-primary:hover {
+  margin-bottom: 10px;
+  margin-top: 10px;
   background-color: rgb(94, 26, 28);
   border: rgb(94, 26, 28);
 }
@@ -212,17 +272,34 @@ option {
   box-shadow: 0 0 0 0.2rem rgba(94, 26, 28, 0.753);
 }
 
-ul{
+ul {
   list-style: circle;
 }
 
-.Statut_List_Title{
+.Statut_List_Title {
   color: rgb(94, 26, 28);
-  font-weight:bold;
+  font-weight: bold;
   font-size: 1rem;
 }
 
-.Time_Left_Diag{
+.Time_Left_Diag {
   display: flex;
   justify-content: center;
+}
+
+#account_icons {
+  display: flex;
+  color: rgb(94, 26, 28);
+  font-size: 25px;
+  width: 50px;
+}
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+}
+
+.account_navbar {
+  display: flex;
+  flex-direction: column;
 }

@@ -2,6 +2,8 @@
 
 namespace App\Controller\Admin;
 use App\Entity\User;
+use App\Entity\AstreintesAndrew;
+use App\Entity\AstreintesMatylde;
 use App\Entity\Astreintes;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Menu\SubMenuItem;
@@ -47,10 +49,13 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home');
 
-        yield MenuItem::section("Gestion d'agents");
+        yield MenuItem::section("INFO AGENTS");
         yield MenuItem::linkToCrud('Agents', 'fas fa-user', User::class);
+        yield MenuItem::section("PLANNINGS");
         yield MenuItem::linkToCrud('Plannings', 'fas fa-user', User::class);
-        yield MenuItem::linkToCrud('Astreintes', 'fa fa-phone', Astreintes::class);
+        yield MenuItem::section("ASTREINTES");
+        yield MenuItem::linkToCrud('Astreintes Andrew', 'fa fa-phone', AstreintesAndrew::class);
+        yield MenuItem::linkToCrud('Astreintes Matylde', 'fa fa-phone', AstreintesMatylde::class);
 
     }
 

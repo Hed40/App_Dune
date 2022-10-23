@@ -45,6 +45,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $Grade = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $Service = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Poste = null;
+
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
@@ -196,6 +202,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setGrade(string $Grade): self
     {
         $this->Grade = $Grade;
+
+        return $this;
+    }
+
+    public function getService(): ?string
+    {
+        return $this->Service;
+    }
+
+    public function setService(string $Service): self
+    {
+        $this->Service = $Service;
+
+        return $this;
+    }
+
+    public function getPoste(): ?string
+    {
+        return $this->Poste;
+    }
+
+    public function setPoste(string $Poste): self
+    {
+        $this->Poste = $Poste;
 
         return $this;
     }
