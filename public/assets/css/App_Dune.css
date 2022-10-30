@@ -77,13 +77,6 @@ label.form-label.required,
   font-size: medium;
 }
 
-.Perso_title{
-  width: 300px;
-  font-size: 1.5rem;
-  color: rgb(94, 26, 28);
-  text-align: start;
-}
-
 h1 {
   width: 300px;
   font-size: 1rem;
@@ -103,14 +96,13 @@ h2 {
 h3 
 {
   color: rgb(94, 26, 28);
-  text-align: start;
+  text-align: center;
   font-size: 1.5rem;
   word-wrap: normal;
   font-weight: bold;
   padding-top: 10px;
   padding-right: 20px;
   
-
 }
 
 h4 {
@@ -160,13 +152,6 @@ option {
 .logo {
   max-width: 200px;
   max-height: 200px;
-}
-
-.md-form,
-.form-floating {
-
-
-  
 }
 
 .form-control {

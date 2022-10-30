@@ -1,6 +1,10 @@
 
 {% block content %}
-			<div class="Personnal_Title_Container">
+	<div class="Personnal_Title_Container">
+		<div>
+			<img class="avatar" src="/assets/img/avatars/Andrew.png" alt="Andrew" />
+		</div>
+			<div>
 				<h1 class="Perso_title">
 					Bonjour
 					<b style="text-transform:uppercase;">
@@ -8,12 +12,9 @@
 					</b>
 					!
 				</h1>
-				<p>
-					Bienvenue dans votre espace personnel
-				</p>
 			</div>
-			<div class="Personnal_Nav_Container">
-
+	</div>
+			<div class="Personnal_Statut_Container">
 				<h4>
 					STATUT DE L'AGENT
 				</h4>
@@ -35,7 +36,9 @@
 						{{ app.user.Poste }}
 					</li>
 				</ul>
-				<h4>
+			</div>
+			<div class="Personnal_SideNav_Container">
+							<h4>
 					NAVIGATION
 				</h4>
 				<br>
@@ -44,28 +47,28 @@
 						<div id="account_icons">
 							<i class="fa-solid fa-house"></i>
 						</div>
-						<a class="btn-primary btn" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" href="{{ path('app_account') }}">Tableau de bord</a>
+						<a class="btn-primary btn" aria-selected="true" href="{{ path('app_account') }}">Tableau de bord</a>
 					</div>
 					<hr/>
 					<div class="navbar-items">
 						<div id="account_icons">
 							<i class="fa-solid fa-calendar-days"></i>
 						</div>
-						<button class="btn-primary btn" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Mon Planning</button>
+						<button class="btn-primary btn" aria-selected="false">Mon Planning</button>
 					</div>
 					<hr/>
 					<div class="navbar-items">
 						<div id="account_icons">
 							<i class="fa-solid fa-brain"></i>
 						</div>
-						<button class="btn-primary btn" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Mes formations</button>
+						<button class="btn-primary btn" aria-selected="false">Mes formations</button>
 					</div>
 					<hr/>
 					<div class="navbar-items">
 						<div id="account_icons">
 							<i class="fa-solid fa-phone"></i>
 						</div>
-						<a class="btn-primary btn" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false" href="{{ path('app_astreintes') }}">Astreintes</a>
+						<a class="btn-primary btn" aria-selected="false" href="{{ path('app_account/astreintes') }}">Astreintes</a>
 					</div>
 					<hr/>
 				</nav>

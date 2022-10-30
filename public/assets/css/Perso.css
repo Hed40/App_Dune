@@ -52,21 +52,70 @@ button {
 
 .Personnal_Title_Container {
   display: flex;
+  flex-direction: row;
+  background-color: rgb(255, 247, 226);
+  justify-items: left;
+  align-items: center;
+  width: 400px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  box-shadow: inset rgb(94, 26, 28), rgb(231, 223, 201);
+  margin-bottom: 8px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border: solid 3px #56131c;
+  border-radius: 50px;
+  background-color: rgb(255, 249, 235);
+}
+
+.Perso_title {
+  width: 300px;
+  font-size: 1.5rem;
+  color: rgb(94, 26, 28);
+  text-align: left;
+  padding-left: 20px;
+}
+
+.Personnal_Statut_Container {
+  display: flex;
   flex-direction: column;
   background-color: rgb(255, 247, 226);
   justify-items: left;
-  width: 500px;
+  width: 400px;
+  min-height: 200px;
   border-radius: 10px;
   border: 1px solid;
-  padding-top: 30px;
-  padding-left: 70px;
-  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-left: 50px;
   margin-bottom: 8px;
+  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+}
+.Personnal_SideNav_Container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 247, 226);
+  justify-items: left;
+  width: 400px;
+  min-height: 200px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-left: 50px;
+  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
 }
 .Perso_Section_Nav {
   display: flex;
   flex-direction: column;
   margin-right: 8px;
+  margin-left: 8px;
   margin-bottom: 8px;
 }
 
@@ -88,20 +137,6 @@ button {
     margin-bottom: 8px;
     border-radius: 10px;
   }
-}
-.Personnal_Nav_Container {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(255, 247, 226);
-  justify-items: left;
-  width: 500px;
-  min-height: 800px;
-  border-radius: 10px;
-  border: 1px solid;
-  padding-top: 30px;
-  padding-right: 70px;
-  padding-left: 70px;
-  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
 }
 
 .Personnal_Main_Container {
@@ -152,6 +187,7 @@ button {
   padding-top: 30px;
   padding-right: 70px;
   padding-left: 70px;
+  margin-top: 8px;
   background-color: rgb(255, 247, 226);
   box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
 }
@@ -171,7 +207,12 @@ button {
   background-color: rgb(255, 247, 226);
   box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
 }
-
+@media (min-width: 1250px) {
+  .Personnal_Astreinte_Historique {
+    margin-left: 8px;
+    margin-top: 0;
+  }
+}
 .card-deck-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -233,7 +274,8 @@ label.form-label.required,
 .btn-primary,
 #register_submit,
 #connexion_submit,
-.btn-primary:focus {
+.btn-primary:focus,
+.btn-primary:hover  {
   width: 150px;
   height: 50px;
   margin-bottom: 10px;
@@ -293,6 +335,19 @@ ul {
   font-size: 25px;
   width: 50px;
 }
+#astreintes_group_icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px;
+}
+
+#astreintes_icons {
+  display: flex;
+  color: rgb(94, 26, 28);
+  font-size: 18px;
+  justify-content: center;
+  width:8px;
+}
 
 .navbar-items {
   display: flex;
@@ -302,4 +357,25 @@ ul {
 .account_navbar {
   display: flex;
   flex-direction: column;
+}
+
+.table,
+th,
+tr {
+  text-align: center;
+ 
+  vertical-align: middle;
+  background-color: #56131c;
+  color: rgb(255, 249, 235);
+  border-radius: 10px;
+}
+
+td
+{
+  text-align: center;
+  background-color:rgb(255, 249, 235) ;
+  border: 1px solid;
+
+  color: #56131c;
+
 }

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AstreintesAndrew{% endblock %}
+    
+{% block body %}
+    <h1>AstreintesAndrew</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ astreintes_andrew.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ astreintes_andrew.Nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ astreintes_andrew.Prenom }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ astreintes_andrew.Date ? astreintes_andrew.Date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Heure</th>
+                <td>{{ astreintes_andrew.Heure ? astreintes_andrew.Heure|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Duree_1</th>
+                <td>{{ astreintes_andrew.Duree1 }}</td>
+            </tr>
+            <tr>
+                <th>Duree_2</th>
+                <td>{{ astreintes_andrew.Duree2 }}</td>
+            </tr>
+            <tr>
+                <th>Motif_Appel</th>
+                <td>{{ astreintes_andrew.MotifAppel }}</td>
+            </tr>
+            <tr>
+                <th>Intervention</th>
+                <td>{{ astreintes_andrew.Intervention ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Motif_Intervention</th>
+                <td>{{ astreintes_andrew.MotifIntervention }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_astreintes_andrew_crud_index') }}">back to list</a>
+
+    <a href="{{ path('app_astreintes_astreintes_andrew_crud_edit', {'id': astreintes_andrew.id}) }}">edit</a>
+
+    {{ include('astreintes_andrew_crud/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,75 @@
+{% block content %}
+	<div class="Personnal_Main_Container">
+		<h3>
+			Mes astreintes
+		</h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>N°</th>
+					<th>Nom</th>
+					<th>Prénom</th>
+					<th>Date</th>
+					<th>Heure</th>
+					<th>Durée - 2min</th>
+					<th>Durée + 2min</th>
+					<th>Motif de l'appel</th>
+					<th>Intervention</th>
+					<th>Motif d'ntervention</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+                {% set total = null %}
+				{% for astreintes_andrew in astreintes_andrew %}
+					<tr>
+						<td>{{ astreintes_andrew.id }}</td>
+						<td>{{ astreintes_andrew.Nom }}</td>
+						<td>{{ astreintes_andrew.Prenom }}</td>
+						<td>{{ astreintes_andrew.Date ? astreintes_andrew.Date|date('d-m-Y') : '' }}</td>
+						<td>{{ astreintes_andrew.Heure ? astreintes_andrew.Heure|date('H:i:s') : '' }}</td>
+						<td>{{ astreintes_andrew.Duree1 }}
+							min</td>
+						<td>{{ astreintes_andrew.Duree2 }}
+							min</td>
+						<td>{{ astreintes_andrew.MotifAppel }}</td>
+						<td>{{ astreintes_andrew.Intervention ? 'Oui' : 'Non' }}</td>
+						<td>{{ astreintes_andrew.MotifIntervention }}</td>
+						<td>
+							<div id="astreintes_group_icons">
+								<a href="{{ path('app_astreintes_andrew_crud_show', {'id': astreintes_andrew.id}) }}">
+									<div id="astreintes_icons">
+                                    <i class="fa-regular fa-eye"></i>
+								        </div>
+							                </a>
+							<div id="astreintes_icons">
+								<a href="{{ path('app_astreintes_andrew_crud_edit', {'id': astreintes_andrew.id}) }}">
+									<div id="astreintes_icons">
+										<i class="fa-solid fa-pen-to-square"></i>
+									</div>
+								</a>
+							</div>
+                            </div>
+						</td>
+					</tr>
+
+				{% else %}
+					<tr>
+						<td colspan="11">no records found</td>
+					</tr>
+				{% endfor %}
+				<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th>0</th>
+					<th>0</th>
+
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+{% endblock %}
