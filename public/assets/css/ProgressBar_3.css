@@ -1,85 +1,85 @@
-.progress-circle_3{
-  position: relative;             /* pour servir de référent */
-  box-sizing: border-box;         /* prise en compte bordure dans la dimension */
-  font-size: 12em;                 /* pour définir les dimensions */
-  width: 1em;                     /* fixe la largeur */
-  height: 1em;                    /* fixe la hauteur */
-  border-radius: 50%;             /* rendu aspect circulaire */
-  border: .15em solid #CDE;       /* couleur de fond de l'anneau */
-  background-color: #FFF;  
+.progress-circle_3 {
+  position: relative; /* pour servir de référent */
+  box-sizing: border-box; /* prise en compte bordure dans la dimension */
+  font-size: 12em; /* pour définir les dimensions */
+  width: 1em; /* fixe la largeur */
+  height: 1em; /* fixe la hauteur */
+  border-radius: 50%; /* rendu aspect circulaire */
+  border: .15em solid #CDE;    /* couleur de fond de l'anneau */
+  background-color: #fff;
 }
 
 .progress-masque_3 {
   position: absolute;
-  width: 1em;                     /* 100% de la largeur */
-  height: 1em;                    /* 100% de la hauteur */
-  left: -.15em;                   /* décalage de la largeur bordure de la gauge */
-  top: -.15em;                    /* décalage de la largeur bordure de la gauge */
-  clip: rect(0, 1em, 1em, .5em);  /* par défaut seule la partie droite est visible */
+  width: 1em; /* 100% de la largeur */
+  height: 1em; /* 100% de la hauteur */
+  left: -.15em; /* décalage de la largeur bordure de la gauge */
+  top: -.15em; /* décalage de la largeur bordure de la gauge */
+  clip: rect(0, 1em, 1em, .5em); /* par défaut seule la partie droite est visible */
 }
 
-.progress-circle_3[data-value^='5']:not([data-value='5']):not([data-value^='5.']) .progress-masque_3,
-.progress-circle_3[data-value^='6']:not([data-value='6']):not([data-value^='6.']) .progress-masque_3,
-.progress-circle_3[data-value^='7']:not([data-value='7']):not([data-value^='7.']) .progress-masque_3,
-.progress-circle_3[data-value^='8']:not([data-value='8']):not([data-value^='8.']) .progress-masque_3,
-.progress-circle_3[data-value^='9']:not([data-value='9']):not([data-value^='9.']) .progress-masque_3,
-.progress-circle_3[data-value^='100'] .progress-masque_3 {
+
+.progress-circle_3[data-value^='4'] .progress-masque_3,
+.progress-circle_3[data-value^='5'] .progress-masque_3,
+.progress-circle_3[data-value^='6'] .progress-masque_3
+
+{
   clip: rect(auto, auto, auto, auto);
 }
-
-.progress-barre_3,
-.progress-sup50_3 {
+.progress-barre_3{
   position: absolute;
-  box-sizing: border-box;         /* prise en compte bordure dans la dimension */
-  border-width: .15em;            /* largeur bordure de la gauge */
+  box-sizing: border-box; /* prise en compte bordure dans la dimension */
+  border-width: .15em; /* largeur bordure de la gauge */
   border-style: solid;
   border-color: rgb(94, 26, 28);
-  border-radius: 50%;             /* rendu aspect circulaire */
-  width: 1em;                     /* largeur à 100% */
-  height: 1em;                    /* hauteur à 100% */
+  border-radius: 50%; /* rendu aspect circulaire */
+  width: 1em; /* largeur à 100% */
+  height: 1em; /* hauteur à 100% */
   clip: rect(0, .5em, 1em, 0);
 }
 
 .progress-sup50_3 {
-    display: none;
-    clip: rect(0, 1em, 1em, .5em);
-  }
+  position: absolute;
+  box-sizing: border-box; /* prise en compte bordure dans la dimension */
+  border-width: .15em; /* largeur bordure de la gauge */
+  border-style: solid;
+  border-color: rgb(94, 26, 28);
+  border-radius: 50%; /* rendu aspect circulaire */
+  width: 1em; /* largeur à 100% */
+  height: 1em; /* hauteur à 100% */
+  clip: rect(0, .5em, 1em, 0);
+}
 
-.progress-circle_3[data-value^='5']:not([data-value='5']):not([data-value^='5.']) .progress-sup50_3,
-.progress-circle_3[data-value^='6']:not([data-value='6']):not([data-value^='6.']) .progress-sup50_3,
-.progress-circle_3[data-value^='7']:not([data-value='7']):not([data-value^='7.']) .progress-sup50_3,
-.progress-circle_3[data-value^='8']:not([data-value='8']):not([data-value^='8.']) .progress-sup50_3,
-.progress-circle_3[data-value^='9']:not([data-value='9']):not([data-value^='9.']) .progress-sup50_3,
-.progress-circle_3[data-value^='100'] .progress-sup50_3 {
-  display:block;
+.progress-sup50_3 {
+  display: none;
+  clip: rect(0, 1em, 1em, .5em);
+}
+
+
+  .progress-circle_3[data-value^='4'] .progress-sup50_3,
+  .progress-circle_3[data-value^='5'] .progress-sup50_3,
+.progress-circle_3[data-value^='6'] .progress-sup50_3 {
+  display: block;
 }
 
 .progress-circle_3:after {
-    content: attr(data-value); /* récup. valeur de progression */
-    font-size: 0.15em;              /* taille de la font en % du parent */
-    height: 100%;                   /* centrage dans le parent */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    /*-- pour effet shadow intérieur --*/
-    /*border-radius: 50%;
-    box-shadow: 0 0 .5em rgba(0, 0, 0, .5) inset;*/
-  }
+  content: attr(data-value); /* récup. valeur de progression */
+  font-size: 0.20em; /* taille de la font en % du parent */
+  font-weight: 600;
+  height: 100%; /* centrage dans le parent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .progress-circle_3[data-value="0"] .progress-barre_3 {transform: rotate(0deg)}
-  .progress-circle_3[data-value="1"] .progress-barre_3 {transform: rotate(36deg)}
-  .progress-circle_3[data-value="2"] .progress-barre_3 {transform: rotate(72deg)}
-  .progress-circle_3[data-value="3"] .progress-barre_3 {transform: rotate(108deg)}
-  .progress-circle_3[data-value="4"] .progress-barre_3 {transform: rotate(144deg)}
-  .progress-circle_3[data-value="5"] .progress-barre_3 {transform: rotate(180deg)}
-  .progress-circle_3[data-value="6"] .progress-barre_3 {transform: rotate(216deg)}
-  .progress-circle_3[data-value="7"] .progress-barre_3 {transform: rotate(252deg)}
-  .progress-circle_3[data-value="8"] .progress-barre_3 {transform: rotate(288deg)} 
-  .progress-circle_3[data-value="9"] .progress-barre_3 {transform: rotate(324deg)} 
-  .progress-circle_3[data-value="10"] .progress-barre_3 {transform: rotate(360deg)}
-  
-  
-  
+  /*-- pour effet shadow intérieur --*/
+  border-radius: 50%;
+    box-shadow: 0 0 .5em rgba(94, 26, 28, 0.198) inset;
+}
 
-
+.progress-circle_3[data-value="0"] .progress-barre_3 {transform: rotate(0deg)}
+.progress-circle_3[data-value="1"] .progress-barre_3 {transform: rotate(60.0deg)}
+.progress-circle_3[data-value="2"] .progress-barre_3 {transform: rotate(120.0deg)}
+.progress-circle_3[data-value="3"] .progress-barre_3 {transform: rotate(180.0deg)}
+.progress-circle_3[data-value="4"] .progress-barre_3 {transform: rotate(240.0deg)}
+.progress-circle_3[data-value="5"] .progress-barre_3 {transform: rotate(300.0deg)}
+.progress-circle_3[data-value="6"] .progress-barre_3 {transform: rotate(360.0deg)}

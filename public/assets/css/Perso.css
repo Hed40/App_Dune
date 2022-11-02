@@ -241,7 +241,7 @@ button {
   border: 1px solid rgb(94, 26, 28);
   border-radius: 10px;
   margin: 8px;
-  background-color: rgb(255, 249, 235);
+  background-color: rgb(255, 252, 244, 1);
   color: rgb(94, 26, 28);
 }
 
@@ -374,8 +374,19 @@ td
 {
   text-align: center;
   background-color:rgb(255, 249, 235) ;
-  border: 1px solid;
-
+  border: 0,5px solid;
   color: #56131c;
 
+}
+
+.filter{
+  color:#56131c;
+  font-weight: bold;
+}
+
+
+.pagination,
+.page-item,
+.page-link{
+  color:#56131c;
 }

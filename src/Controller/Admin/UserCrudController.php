@@ -6,7 +6,6 @@ use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
-
 class UserCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -25,7 +24,10 @@ class UserCrudController extends AbstractCrudController
             TextField::new('Categorie'),
             TextField::new('Grade'),
             TextField::new('Service'),
-            TextField::new('Poste')
+            TextField::new('Poste'),
+            TextField::new('heures'),
+            TextField::new('ARTT'),
+            TextField::new('CP'),
 
         ];
     }

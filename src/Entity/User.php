@@ -51,6 +51,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $Poste = null;
 
+    #[ORM\Column]
+    private ?float $Nb_Heures = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $heures = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $ARTT = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $CP = null;
+
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
@@ -229,5 +241,41 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-    
+
+    public function getHeures(): ?string
+    {
+        return $this->heures;
+    }
+
+    public function setHeures(string $heures): self
+    {
+        $this->heures = $heures;
+
+        return $this;
+    }
+
+    public function getARTT(): ?string
+    {
+        return $this->ARTT;
+    }
+
+    public function setARTT(string $ARTT): self
+    {
+        $this->ARTT = $ARTT;
+
+        return $this;
+    }
+
+    public function getCP(): ?string
+    {
+        return $this->CP;
+    }
+
+    public function setCP(string $CP): self
+    {
+        $this->CP = $CP;
+
+        return $this;
+    }
+
 }
