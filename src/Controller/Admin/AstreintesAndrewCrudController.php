@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\AstreintesAndrew;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
@@ -22,8 +23,8 @@ class AstreintesAndrewCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('Prenom')->hideOnForm(),
-            TextField::new('Nom')->hideOnForm(),
+            TextField::new('Prenom'),
+            TextField::new('Nom'),/*->hideOnForm(),*/
             DateField::new('Date'),
             TimeField::new('Heure'),
             NumberField::new('Duree_1'),

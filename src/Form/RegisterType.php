@@ -12,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Length;
 
 class RegisterType extends AbstractType
@@ -45,8 +44,8 @@ class RegisterType extends AbstractType
                 'label' => 'Email',
                 'constraints'=> new Length([
                     'min'=> 2,
-                    'max'=> 30
-            ]), //Longueur de 2 min à 30 caractères Max
+                    'max'=> 100
+            ]), //Longueur de 2 min à 100 caractères Max
                 'attr' => [
                     'placeholder' => 'Veuillez de renseigner votre E-mail'
                 ]
@@ -58,8 +57,8 @@ class RegisterType extends AbstractType
                 'required' => true,
                 'constraints'=> new Length([
                     'min'=> 2,
-                    'max'=> 30
-            ]), //Longueur de 2 min à 30 caractères Max
+                    'max'=> 50
+            ]), //Longueur de 2 min à 50 caractères Max
                 'first_options'=> [
                     'label' => 'Mot de passe',
                     'attr'=> [

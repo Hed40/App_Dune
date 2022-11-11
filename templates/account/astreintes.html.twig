@@ -6,7 +6,7 @@
 		</h3>
 		<p class="filter">
 			FILTRER</p>
-		{% if astreintes_andrew|length > 0 %}
+		{% if astreintes_users|length > 0 %}
 			<table class="table table-hover">
 				<thead>
 					<tr>
@@ -27,29 +27,29 @@
 				<tbody>
 					{% set total_1 = null %}
 					{% set total_2 = null %}
-					{% for astreintes_andrew in astreintes_andrew %}
+					{% for astreintes_users in astreintes_users %}
 						<tr>
-							<td>{{ astreintes_andrew.id }}</td>
-							<td>{{ app.user.Lastname }}</td>
-							<td>{{ app.user.Firstname }}</td>
-							<td>{{ astreintes_andrew.Date ? astreintes_andrew.Date|date('d-m-Y') : '' }}</td>
-							<td>{{ astreintes_andrew.Heure ? astreintes_andrew.Heure|date('H:i:s') : '' }}</td>
-							<td>{{ astreintes_andrew.Duree1 }}
+							<td>{{ astreintes_users.id }}</td>
+							<td>{{ astreintes_users.nom }}</td>
+							<td>{{ astreintes_users.prenom }}</td>
+							<td>{{ astreintes_users.date ? astreintes_users.date|date('d-m-Y') : '' }}</td>
+							<td>{{ astreintes_users.Heure ? astreintes_users.Heure|date('H:i:s') : '' }}</td>
+							<td>{{ astreintes_users.Duree1 }}
 								min</td>
-							<td>{{ astreintes_andrew.Duree2 }}
+							<td>{{ astreintes_users.Duree2 }}
 								min</td>
-							<td>{{ astreintes_andrew.MotifAppel }}</td>
-							<td>{{ astreintes_andrew.Intervention ? 'Oui' : 'Non' }}</td>
-							<td>{{ astreintes_andrew.MotifIntervention }}</td>
+							<td>{{ astreintes_users.MotifAppel }}</td>
+							<td>{{ astreintes_users.Intervention ? 'Oui' : 'Non' }}</td>
+							<td>{{ astreintes_users.MotifIntervention }}</td>
 							<td>
 								<div id="astreintes_group_icons">
-									<a href="{{ path('app_astreintes_andrew_crud_show', {'id': astreintes_andrew.id}) }}">
+									<a href="">
 										<div id="astreintes_icons">
 											<i class="fa-regular fa-eye"></i>
 										</div>
 									</a>
 									<div id="astreintes_icons">
-										<a href="{{ path('app_astreintes_andrew_crud_edit', {'id': astreintes_andrew.id}) }}">
+										<a href="">
 											<div id="astreintes_icons">
 												<i class="fa-solid fa-pen-to-square"></i>
 											</div>
@@ -59,8 +59,8 @@
 							</td>
 						</tr>
 
-						{% set total_1 = total_1 +(astreintes_andrew.Duree1 * astreintes_andrew|length) %}
-						{% set total_2 = total_2 +(astreintes_andrew.Duree2 * astreintes_andrew|length) %}
+						{% set total_1 = total_1 +(astreintes_users.Duree1 * astreintes_users|length) %}
+						{% set total_2 = total_2 +(astreintes_users.Duree2 * astreintes_users|length) %}
 
 					</tbody>
 				{% endfor %}

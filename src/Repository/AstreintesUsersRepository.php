@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\AstreintesAndrew;
+use App\Entity\AstreintesUsers;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<AstreintesAndrew>
+ * @extends ServiceEntityRepository<AstreintesUsers>
  *
- * @method AstreintesAndrew|null find($id, $lockMode = null, $lockVersion = null)
- * @method AstreintesAndrew|null findOneBy(array $criteria, array $orderBy = null)
- * @method AstreintesAndrew[]    findAll()
- * @method AstreintesAndrew[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method AstreintesUsers|null find($id, $lockMode = null, $lockVersion = null)
+ * @method AstreintesUsers|null findOneBy(array $criteria, array $orderBy = null)
+ * @method AstreintesUsers[]    findAll()
+ * @method AstreintesUsers[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class AstreintesAndrewRepository extends ServiceEntityRepository
+class AstreintesUsersRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, AstreintesAndrew::class);
+        parent::__construct($registry, AstreintesUsers::class);
     }
 
-    public function save(AstreintesAndrew $entity, bool $flush = false): void
+    public function save(AstreintesUsers $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class AstreintesAndrewRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(AstreintesAndrew $entity, bool $flush = false): void
+    public function remove(AstreintesUsers $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class AstreintesAndrewRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return AstreintesAndrew[] Returns an array of AstreintesAndrew objects
+//     * @return AstreintesUsers[] Returns an array of AstreintesUsers objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class AstreintesAndrewRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?AstreintesAndrew
+//    public function findOneBySomeField($value): ?AstreintesUsers
 //    {
 //        return $this->createQueryBuilder('a')
 //            ->andWhere('a.exampleField = :val')

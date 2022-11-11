@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle astreinte
+{% endblock %}
+
+{% block content %}
+	<div class="Main_Container">
+		<section class="Perso_Section_Nav">
+			{% include 'account/accountNav.html.twig' %}
+		</section>
+		<section class="Perso_Section_Main">
+			<div class="Personnal_Main_Container">
+				{{ include('account/astreintes/form.html.twig') }}
+			</div>
+		</div>
+	</section>
+</div>{% endblock %}

@@ -17,7 +17,7 @@
   top: -.15em;                    /* décalage de la largeur bordure de la gauge */
   clip: rect(0, 1em, 1em, .5em);  /* par défaut seule la partie droite est visible */
 }
-
+/**/
 .progress-circle[data-value^='803'] .progress-masque,
 .progress-circle[data-value^='804'] .progress-masque,
 .progress-circle[data-value^='805'] .progress-masque,

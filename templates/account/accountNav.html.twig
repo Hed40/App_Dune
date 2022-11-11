@@ -1,76 +1,93 @@
-
 {% block content %}
 	<div class="Personnal_Title_Container">
 		<div>
-			<img class="avatar" src="/assets/img/avatars/Andrew.png" alt="Andrew" />
+			<img class="avatar" src="/assets/img/avatars/Andrew.png" alt="Andrew"/>
 		</div>
-			<div>
-				<h1 class="Perso_title">
-					Bonjour
-					<b style="text-transform:uppercase;">
-						{{ app.user.firstname }}
-					</b>
-					!
-				</h1>
-			</div>
+		<div>
+			<h1 class="Perso_title">
+				Bonjour
+				<b style="text-transform:uppercase;">
+					{{ app.user.firstname }}
+				</b>
+				!
+			</h1>
+		</div>
 	</div>
-			<div class="Personnal_Statut_Container">
-				<h4>
-					STATUT DE L'AGENT
-				</h4>
-				<ul>
-					<li>
-						<span class="Statut_List_Title">Catégorie :
-						</span>
-						{{ app.user.Categorie }}</li>
-					<li>
-						<span class="Statut_List_Title">Grade :</span>
-						{{ app.user.Grade }}
-					</li>
-					<li>
-						<span class="Statut_List_Title">Service :</span>
-						{{ app.user.Service }}
-					</li>
-					<li>
-						<span class="Statut_List_Title">Poste occupé :</span>
-						{{ app.user.Poste }}
-					</li>
-				</ul>
+	<div class="Personnal_Statut_Container">
+		<h4>
+			STATUT DE L'AGENT
+		</h4>
+		<ul>
+			<li>
+				<span class="Statut_List_Title">Catégorie :
+				</span>
+				{{ app.user.Categorie }}</li>
+			<li>
+				<span class="Statut_List_Title">Grade :</span>
+				{{ app.user.Grade }}
+			</li>
+			<li>
+				<span class="Statut_List_Title">Service :</span>
+				{{ app.user.Service }}
+			</li>
+			<li>
+				<span class="Statut_List_Title">Poste occupé :</span>
+				{{ app.user.Poste }}
+			</li>
+		</ul>
+	</div>
+	<div class="Personnal_SideNav_Container">
+		<h4>
+			NAVIGATION
+		</h4>
+		<nav class=" account_navbar ">
+			<div class="navbar-items">
+				<div id="account_icons">
+					<i class="fa-solid fa-house"></i>
+				</div>
+				<a class="btn-primary btn" aria-selected="true" href="{{ path('app_account') }}">Tableau de bord</a>
 			</div>
-			<div class="Personnal_SideNav_Container">
-							<h4>
-					NAVIGATION
-				</h4>
-				<br>
-				<nav class=" account_navbar ">
-					<div class="navbar-items">
-						<div id="account_icons">
-							<i class="fa-solid fa-house"></i>
-						</div>
-						<a class="btn-primary btn" aria-selected="true" href="{{ path('app_account') }}">Tableau de bord</a>
-					</div>
-					<hr/>
-					<div class="navbar-items">
-						<div id="account_icons">
-							<i class="fa-solid fa-calendar-days"></i>
-						</div>
-						<button class="btn-primary btn" aria-selected="false">Mon Planning</button>
-					</div>
-					<hr/>
-					<div class="navbar-items">
-						<div id="account_icons">
-							<i class="fa-solid fa-brain"></i>
-						</div>
-						<button class="btn-primary btn" aria-selected="false">Mes formations</button>
-					</div>
-					<hr/>
-					<div class="navbar-items">
-						<div id="account_icons">
-							<i class="fa-solid fa-phone"></i>
-						</div>
-						<a class="btn-primary btn" aria-selected="false" href="{{ path('app_account/astreintes') }}">Astreintes</a>
-					</div>
-					<br>
-				</nav>
+			<hr/>
+			<div class="navbar-items">
+				<div id="account_icons">
+					<i class="fa-solid fa-calendar-days"></i>
+				</div>
+				<button class="btn-primary btn" aria-selected="false">Mon Planning</button>
 			</div>
+			<hr/>
+			<div class="navbar-items">
+				<div id="account_icons">
+					<i class="fa-solid fa-brain"></i>
+				</div>
+				<button class="btn-primary btn" aria-selected="false">Mes formations</button>
+			</div>
+			<hr/>
+			<div class="navbar-items">
+				<div id="account_icons">
+					<i class="fa-solid fa-phone"></i>
+				</div>
+				<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Mes astreintes
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="dropdown-item" type="button" href="{{ path('app_account/astreintes/new') }}">Soumettre</a>
+						</li>
+						<li>
+							<a class="dropdown-item" type="button" href="{{ path('app_account/astreintes') }}">Historique</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<hr/>
+			<div class="navbar-items">
+				<div id="account_icons">
+					<i class="fa-solid fa-gear"></i>
+				</div>
+				<button class="btn-primary btn" aria-selected="false">Settings</button>
+			</div>
+			<hr/>
+		</nav>
+	</div>
 {% endblock %}
