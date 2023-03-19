@@ -1,112 +1,116 @@
-
 {% block content %}
 	<div class="Personnal_Main_Container">
 		<h3>
-			Mes astreintes
+			MES ASTREINTES
 		</h3>
-		<p class="filter">
-			FILTRER</p>
-		{% if astreintes_users|length > 0 %}
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>N°</th>
-						<th>Nom</th>
-						<th>Prénom</th>
-						<th>Date</th>
-						<th>Heure</th>
-						<th>Durée - 2min</th>
-						<th>Durée + 2min</th>
-						<th>Motif de l'appel</th>
-						<th>Intervention</th>
-						<th>Motif d'ntervention</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
+		<div class="filter row">
+			<div class="col-md-12">
+				<h4>
+					FILTRER</h4>
+				{{form(form)}}
+				</div>
 
-				<tbody>
-					{% set total_1 = null %}
-					{% set total_2 = null %}
-					{% for astreintes_users in astreintes_users %}
+			</div>
+			{% if astreintes_users|length > 0 %}
+				<table class="table table-hover">
+					<thead>
 						<tr>
-							<td>{{ astreintes_users.id }}</td>
-							<td>{{ astreintes_users.nom }}</td>
-							<td>{{ astreintes_users.prenom }}</td>
-							<td>{{ astreintes_users.date ? astreintes_users.date|date('d-m-Y') : '' }}</td>
-							<td>{{ astreintes_users.Heure ? astreintes_users.Heure|date('H:i:s') : '' }}</td>
-							<td>{{ astreintes_users.Duree1 }}
-								min</td>
-							<td>{{ astreintes_users.Duree2 }}
-								min</td>
-							<td>{{ astreintes_users.MotifAppel }}</td>
-							<td>{{ astreintes_users.Intervention ? 'Oui' : 'Non' }}</td>
-							<td>{{ astreintes_users.MotifIntervention }}</td>
-							<td>
-								<div id="astreintes_group_icons">
-									<a href="">
-										<div id="astreintes_icons">
-											<i class="fa-regular fa-eye"></i>
-										</div>
-									</a>
-									<div id="astreintes_icons">
+							<th>N°</th>
+							<th>Nom</th>
+							<th>Prénom</th>
+							<th>Date</th>
+							<th>Heure</th>
+							<th>Durée - 2min</th>
+							<th>Durée + 2min</th>
+							<th>Motif de l'appel</th>
+							<th>Intervention</th>
+							<th>Motif d'ntervention</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						{% set total_1 = null %}
+						{% set total_2 = null %}
+						{% for astreintes_users in astreintes_users %}
+							<tr>
+								<td>{{ astreintes_users.id }}</td>
+								<td>{{ astreintes_users.firstname }}</td>
+								<td>{{ astreintes_users.lastname }}</td>
+								<td>{{ astreintes_users.date ? astreintes_users.date|date('d M Y') : '' }}</td>
+								<td>{{ astreintes_users.Heure ? astreintes_users.Heure|date('H:i:s') : '' }}</td>
+								<td>{{ astreintes_users.Duree1 }}
+									min</td>
+								<td>{{ astreintes_users.Duree2 }}
+									min</td>
+								<td>{{ astreintes_users.MotifAppel }}</td>
+								<td>{{ astreintes_users.Intervention ? 'Oui' : 'Non' }}</td>
+								<td>{{ astreintes_users.MotifIntervention }}</td>
+								<td>
+									<div id="astreintes_group_icons">
 										<a href="">
 											<div id="astreintes_icons">
-												<i class="fa-solid fa-pen-to-square"></i>
+												<i class="fa-regular fa-eye"></i>
 											</div>
 										</a>
+										<div id="astreintes_icons">
+											<a href="">
+												<div id="astreintes_icons">
+													<i class="fa-solid fa-pen-to-square"></i>
+												</div>
+											</a>
+										</div>
 									</div>
-								</div>
-							</td>
-						</tr>
+								</td>
+							</tr>
 
-						{% set total_1 = total_1 +(astreintes_users.Duree1 * astreintes_users|length) %}
-						{% set total_2 = total_2 +(astreintes_users.Duree2 * astreintes_users|length) %}
+							{% set total_1 = total_1 +(astreintes_users.Duree1 * astreintes_users|length) %}
+							{% set total_2 = total_2 +(astreintes_users.Duree2 * astreintes_users|length) %}
 
-					</tbody>
-				{% endfor %}
-				<tr>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th>{{(total_1)}}
-						Min</th>
-					<th>{{(total_2)}}
-						Min</th>
-					<th></th>
-					<th></th>
-					<th>Total des appels</th>
-					<th>{{(total_1) + (total_2)}}
-						Min</th>
-				</tr>
+						</tbody>
+					{% endfor %}
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th>{{(total_1)}}
+							Min</th>
+						<th>{{(total_2)}}
+							Min</th>
+						<th></th>
+						<th></th>
+						<th>Total des appels</th>
+						<th>{{(total_1) + (total_2)}}
+							Min</th>
+					</tr>
 
-			</table>
-			<nav aria-label="Page navigation">
-				<ul class="pagination justify-content-center bottom 0">
-					<li class="page-item disabled">
-						<a class="page-link" href="#" tabindex="-1">Pécédent</a>
-					</li>
-					<li class="page-item">
-						<a class="page-link" href="#">1</a>
-					</li>
-					<li class="page-item">
-						<a class="page-link" href="#">2</a>
-					</li>
-					<li class="page-item">
-						<a class="page-link" href="#">3</a>
-					</li>
-					<li class="page-item">
-						<a class="page-link" href="#">Suivant</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-
-	{% else %}
-		<p>
-			<b>Aucune astreinte n'est renseignée
-			</b>
-		</p>
-	{% endif %}
-{% endblock %}
+				</table>
+				<nav aria-label="Page navigation">
+					<ul class="pagination justify-content-center bottom 0">
+						<li class="page-item disabled">
+							<a class="page-link" href="#" tabindex="-1">Pécédent</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#">1</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#">2</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#">3</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#">Suivant</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		{% else %}
+			<p>
+				<b>Aucune astreinte n'est renseignée
+				</b>
+			</p>
+		{% endif %}
+	{% endblock %}

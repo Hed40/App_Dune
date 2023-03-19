@@ -1,15 +1,111 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Astreintes Andrew {% endblock %}
+{% block title %}AstreintesUsers index
+{% endblock %}
 
 {% block content %}
 
+
 	<div class="Main_Container">
 		<section class="Perso_Section_Nav">
-		{% include 'account/accountNav.html.twig' %}
+			{% include 'account/accountNav.html.twig' %}
 		</section>
 		<section class="Perso_Section_Main">
-		{% include 'account/astreintes.html.twig' %}
-		</section>
-	</div>
-{% endblock %}
+			<div class="Personnal_Main_Container">
+
+				<h3>
+					MES ASTREINTES
+				</h3>
+				<div class="filter row">
+					<div class="col-md-12">
+						<h4>
+							FILTRER</h4>
+
+					</div>
+
+				</div>
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Prénom</th>
+							<th>Nom</th>
+							<th>Date</th>
+							<th>Heure</th>
+							<th>Motif d'appel</th>
+							<th>Durée <= 2 min</th>
+							<th>Durée > 2 min</th>
+							<th>Intervention</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% set total_1 = null %}
+						{% set total_2 = null %}
+						{% for astreintes_user in astreintes %}
+							<tr>
+								<td>{{ astreintes_user.astreinteUser.firstName }}</td>
+								<td>{{ astreintes_user.astreinteUser.lastName }}</td>
+								<td>{{ astreintes_user.Date ? astreintes_user.Date|date('d-m-Y') : '' }}</td>
+								<td>{{ astreintes_user.Time ? astreintes_user.Time|date('H:i:s') : '' }}</td>
+								<td>{{ astreintes_user.Description }}</td>
+								<td>{{ astreintes_user.Duration1 }}
+									min</td>
+								<td>{{ astreintes_user.Duration2 }}
+									min</td>
+								<td>{{ astreintes_user.Intervention ? 'Yes' : 'No' }}</td>
+								<td>
+									<div id="astreintes_group_icons">
+										<a href="{{ path('app_astreintes_show', {'id': astreintes_user.id}) }}">
+											<div id="astreintes_icons">
+												<i class="fa-regular fa-eye"></i>
+											</div>
+										</a>
+										<div id="astreintes_icons">
+											<a href="{{ path('app_astreintes_edit', {'id': astreintes_user.id}) }}">
+												<div id="astreintes_icons">
+													<i class="fa-solid fa-pen-to-square"></i>
+												</div>
+											</a>
+										</div>
+											<div id="astreintes_icons">
+												<form method="post" action="{{ path('app_astreintes_delete', {'id': astreintes_user.id}) }}" onsubmit="return confirm('Êtes-vous sûre de vouloir supprimer cette astreinte ?');">
+													<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ astreintes_user.id) }}">
+													<button type="submit" id="astreintes_icons">
+														<i class="fa-solid fa-trash"></i>
+													</button>
+												</form>
+											</div>
+										</div>
+									</div>
+									</td>
+								</td>
+							</tr>
+							{% set total_1 = total_1 +(astreintes_user.Duration1 * astreintes_user|length) %}
+							{% set total_2 = total_2 +(astreintes_user.Duration2 * astreintes_user|length) %}
+						{% else %}
+							<tr>
+								<td colspan="8">Aucune astreinte renseignée</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th>{{(total_1)}}
+							Min</th>
+						<th>{{(total_2)}}
+							Min</th>
+						<th>Total des appels</th>
+						<th>{{(total_1) + (total_2)}}
+							Min</th>
+					</tr>
+				</table>
+
+				<a class="btn btn-primary" href="{{ path('app_astreintes_new') }}">Créer</a>
+			</section>
+		</div>
+	{% endblock %}

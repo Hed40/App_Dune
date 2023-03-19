@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Intervention index{% endblock %}
+
+{% block content %}
+	<div class="Main_Container">
+		<section class="Perso_Section_Nav">
+			{% include 'account/accountNav.html.twig' %}
+		</section>
+		<section class="Perso_Section_Main">
+			<div class="Personnal_Main_Container">
+            				<h3>
+					MES INTERVENTIONS
+				</h3>
+<div class="filter ">
+    <div class="row col-12 d-flex align-items-center ">
+        <form action="{{ path('app_intervention_index') }}" method="get">
+			{% set date = date is defined ? date : '' %}
+            <div class="form-group d-flex align-items-center">
+				<div class="form-item m-3">
+                <label for="date">Rechercher</label>
+				</div>
+				<div class="form-item m-3">
+                <input type="date" name="date" id="date" value="{{ date }}" class="form-control">
+				</div>
+				<div class="form-item m-3">
+				<button type="submit" class="btn btn-primary">Filtrer</button>
+				</div>
+			</div>
+            
+        </form>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date</th>
+            <th>Action menée</th>
+            <th>Résultat obtenu</th>
+            <th>Début d'intervention</th>
+            <th>Fin d'intervention</th>
+            <th>Durée</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for intervention in interventions %}
+        {% if date is empty or intervention.Date == date %}
+        <tr>
+            <td>{{ intervention.interventionUser.Firstname }}</td>
+            <td>{{ intervention.interventionUser.Lastname }}</td>
+            <td>{{ intervention.Date ? intervention.Date|date('d-m-y') : '' }}</td>
+            <td>{{ intervention.Action }}</td>
+            <td>{{ intervention.Resultat }}</td>
+            <td>{{ intervention.Horaire1 ? intervention.Horaire1|date('H:i:s') : '' }}</td>
+            <td>{{ intervention.Horaire2 ? intervention.Horaire2|date('H:i:s') : '' }}</td>
+            <td>{{ intervention.Duration }} h</td>
+            <td>
+                <div id="astreintes_group_icons">
+                    <a href="{{ path('app_intervention_show', {'id': intervention.id}) }}">
+                        <div id="astreintes_icons">
+                            <i class="fa-regular fa-eye"></i>
+                        </div>
+                    </a>
+                    <div id="astreintes_icons">
+                        <a href="{{ path('app_intervention_edit', {'id': intervention.id}) }}">
+                            <div id="astreintes_icons">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="astreintes_icons">
+                        <form method="post" action="{{ path('app_intervention_delete', {'id': intervention.id}) }}" onsubmit="return confirm('Êtes-vous sûre de vouloir supprimer cette intervention ?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ intervention.id) }}">
+                            <button type="submit" id="astreintes_icons">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {% endif %}
+        {% else %}
+        <tr>
+            <td colspan="10">Aucune intervention trouvée pour la date sélectionnée</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+    <a class="btn btn-primary" href="{{ path('app_intervention_new') }}">Créer</a>
+    			</section>
+		</div>
+{% endblock %}

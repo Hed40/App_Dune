@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\User;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -30,6 +29,7 @@ class RegisterType extends AbstractType
                     'placeholder' => 'Veuillez saisir votre prénom'
                 ]
             ])
+
             ->add('lastname', TextType::class, [
                 'label' => 'Nom',
                 'constraints'=> new Length([

@@ -19,7 +19,7 @@ class AccountPasswordController extends AbstractController
     $this->entityManager = $entityManager;
    }
 
-    #[Route('/mon_compte/modifier-mon-mot-de-passe', name: 'app_account_password')]
+    #[Route('/mon_compte/settings/password', name: 'app_account/settings/password')]
     public function index(Request $request, UserPasswordHasherInterface $encoder): Response
     {
         $notification_Good_Pwd = null;
@@ -52,7 +52,7 @@ class AccountPasswordController extends AbstractController
             }
         }
 
-        return $this->render('account/password.html.twig', [
+        return $this->render('account/settings/password.html.twig', [
             'form' => $form->createView(),
             'notification_Gp'=> $notification_Good_Pwd,
             'notification_Wp'=> $notification_Wrong_Pwd

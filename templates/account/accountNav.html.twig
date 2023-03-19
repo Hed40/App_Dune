@@ -1,93 +1,262 @@
 {% block content %}
-	<div class="Personnal_Title_Container">
-		<div>
-			<img class="avatar" src="/assets/img/avatars/Andrew.png" alt="Andrew"/>
-		</div>
-		<div>
-			<h1 class="Perso_title">
-				Bonjour
-				<b style="text-transform:uppercase;">
-					{{ app.user.firstname }}
-				</b>
-				!
-			</h1>
-		</div>
-	</div>
-	<div class="Personnal_Statut_Container">
-		<h4>
-			STATUT DE L'AGENT
-		</h4>
-		<ul>
-			<li>
-				<span class="Statut_List_Title">Catégorie :
-				</span>
-				{{ app.user.Categorie }}</li>
-			<li>
-				<span class="Statut_List_Title">Grade :</span>
-				{{ app.user.Grade }}
-			</li>
-			<li>
-				<span class="Statut_List_Title">Service :</span>
-				{{ app.user.Service }}
-			</li>
-			<li>
-				<span class="Statut_List_Title">Poste occupé :</span>
-				{{ app.user.Poste }}
-			</li>
-		</ul>
-	</div>
-	<div class="Personnal_SideNav_Container">
-		<h4>
-			NAVIGATION
-		</h4>
-		<nav class=" account_navbar ">
-			<div class="navbar-items">
-				<div id="account_icons">
-					<i class="fa-solid fa-house"></i>
-				</div>
-				<a class="btn-primary btn" aria-selected="true" href="{{ path('app_account') }}">Tableau de bord</a>
-			</div>
-			<hr/>
-			<div class="navbar-items">
-				<div id="account_icons">
-					<i class="fa-solid fa-calendar-days"></i>
-				</div>
-				<button class="btn-primary btn" aria-selected="false">Mon Planning</button>
-			</div>
-			<hr/>
-			<div class="navbar-items">
-				<div id="account_icons">
-					<i class="fa-solid fa-brain"></i>
-				</div>
-				<button class="btn-primary btn" aria-selected="false">Mes formations</button>
-			</div>
-			<hr/>
-			<div class="navbar-items">
-				<div id="account_icons">
-					<i class="fa-solid fa-phone"></i>
-				</div>
-				<div class="dropdown">
-					<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Mes astreintes
-					</button>
-					<ul class="dropdown-menu">
-						<li>
-							<a class="dropdown-item" type="button" href="{{ path('app_account/astreintes/new') }}">Soumettre</a>
-						</li>
-						<li>
-							<a class="dropdown-item" type="button" href="{{ path('app_account/astreintes') }}">Historique</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<hr/>
-			<div class="navbar-items">
-				<div id="account_icons">
-					<i class="fa-solid fa-gear"></i>
-				</div>
-				<button class="btn-primary btn" aria-selected="false">Settings</button>
-			</div>
-			<hr/>
-		</nav>
-	</div>
+  <div class="Personnal_group">
+    <div class="Personnal_Title_Container">
+      <div>
+        <img class="avatar" src="/assets/img/avatars/Andrew.png" alt="Andrew" />
+      </div>
+      <div>
+        <h1 class="Perso_title">
+          Bonjour
+          <b style="text-transform:uppercase;">{{ app.user.firstname }}</b>
+          !
+        </h1>
+      </div>
+    </div>
+    <div class="Personnal_Statut_Container">
+      <ul>
+        <li>
+          <span class="Statut_List_Title">Catégorie :</span>
+          {{ app.user.Categorie }}
+        </li>
+        <li>
+          <span class="Statut_List_Title">Grade :</span>
+          {{ app.user.Grade }}
+        </li>
+        <li>
+          <span class="Statut_List_Title">Service :</span>
+          {{ app.user.Service }}
+        </li>
+        <li>
+          <span class="Statut_List_Title">Poste occupé :</span>
+          {{ app.user.Poste }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="Personnal_SideNav_Container">
+    <h4>
+      NAVIGATION
+    </h4>
+    <nav class="account_navbar">
+      <div class="navbar-items">
+        <div id="account_icons">
+          <i class="fa-solid fa-house"></i>
+        </div>
+        <a class="btn-primary btn"
+          aria-selected="true"
+          href="{{ path('app_account') }}">
+          Tableau de bord
+        </a>
+      </div>
+      <hr />
+      <div class="navbar-items">
+        <div id="account_icons">
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+        <button class="btn-primary btn" aria-selected="false">
+          Mon Planning
+        </button>
+      </div>
+      <hr />
+      <div class="navbar-items">
+        <div id="account_icons">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <button class="btn-primary btn" aria-selected="false">
+          Mes formations
+        </button>
+      </div>
+      <hr />
+      {% if is_granted('ROLE_ASTREINTES') %}
+        <div class="navbar-items">
+          <div id="account_icons">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Mes astreintes
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item"
+                  type="button"
+                  href="{{ path('app_astreintes_new') }}">
+                  Soumettre
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  type="button"
+                  href="{{ path('app_astreintes_index') }}">
+                  Historique
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item"
+                  type="button"
+                  href="{{ path('app_intervention_index') }}">
+                  Interventions
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="navbar-items">
+          <div id="account_icons">
+            <i class="fa-solid fa-coins"></i>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Gestion régie
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" type="button" href="">Synthèse</a>
+              </li>
+              <li>
+                <a class="dropdown-item" type="button" href="">Caisses</a>
+              </li>
+              <li>
+                <a class="dropdown-item" type="button" href="">Versements</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+      {% endif %}
+      {% if is_granted('ROLE_REGISSEUR') %}
+        <hr />
+        <div class="navbar-items">
+          <div id="account_icons">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Gestion régie
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" type="button" href="">Synthèse</a>
+              </li>
+              <li>
+                <a class="dropdown-item" type="button" href="">Caisses</a>
+              </li>
+              <li>
+                <a class="dropdown-item" type="button" href="">Versements</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+      <div class="navbar-items">
+        <div id="account_icons">
+          <i class="fa-solid fa-gear"></i>
+        </div>
+        <a class="btn-primary btn"
+          aria-selected="false"
+          href="{{ path('app_account/settings/password') }}">
+          Settings
+        </a>
+      </div>
+      <hr />
+    </nav>
+  </div>
+  <div class="Personnal_SideNav_Container_mobile" id="PsContainer_mobile">
+    <nav class="account_navbar_mobile">
+      <div class="navbar-items mobile_home">
+        <div id="account_icons">
+          <div class="textAccueil">
+            Accueil
+          </div>
+          <i class="fa-solid fa-house" href="{{ path('app_account') }}"></i>
+        </div>
+      </div>
+      <div class="navbar-items mobile_calendar">
+        <div id="account_icons">
+          <div class="textAccueil">
+            Planning
+          </div>
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+      </div>
+      <div class="navbar-items mobile_brain">
+        <div id="account_icons">
+          <div class="textAccueil">
+            Formations
+          </div>
+          <i class="fa-solid fa-brain"></i>
+        </div>
+      </div>
+      {% if is_granted('ROLE_ASTREINTES') %}
+        <div class="navbar-items mobile_phone">
+          <div id="account_icons">
+            <div class="textAccueil">
+              Astreintes
+            </div>
+            <i class="fa-solid fa-phone"></i>
+          </div>
+        </div>
+        <div class="navbar-items mobile_coins">
+          <div id="account_icons">
+            <div class="textAccueil">
+              Régie
+            </div>
+            <i class="fa-solid fa-coins"></i>
+          </div>
+        </div>
+      {% endif %}
+      <div class="navbar-items mobile_settings">
+        <div id="account_icons">
+          <div class="textAccueil">
+            Paramètres
+          </div>
+          <i class="fa-solid fa-gear"></i>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+    <div class="dropdown_calendars">
+      <nav class="account_navbar_mobile_dd_2">
+        <ul>
+          <li><a>Plannings</a></li>
+          <li><a>Heures effectuées</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="dropdown_formations">
+      <nav class="account_navbar_mobile_dd_3">
+        <a>Formations à venir</a>
+        <a>Formations effectuées</a>
+      </nav>
+    </div>
+    <div class="dropdown_astreintes">
+      <nav class="account_navbar_mobile_dd_4">
+        <a>Nouvelles Astreintes</a>
+        <a>Mon historique</a>
+      </nav>
+    </div>
+    <div class="dropdown_regie">
+      <nav class="account_navbar_mobile_dd_5">
+        <a>Régie</a>
+      </nav>
+    </div>
+    <div class="dropdown_settings">
+      <nav class="account_navbar_mobile_dd_6">
+        <a>paramètres</a>
+      </nav>
+    </div>
 {% endblock %}

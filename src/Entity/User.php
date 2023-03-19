@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface 
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -48,9 +48,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $Poste = null;
 
-    #[ORM\Column]
-    private ?float $Nb_Heures = null;
-
     #[ORM\Column(length: 255)]
     private ?string $heures = null;
 
@@ -60,7 +57,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $CP = null;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: AstreintesUsers::class)]
+    #[ORM\OneToMany(mappedBy: 'interventionUser', targetEntity: Intervention::class)]
+    private Collection $interventionUser;
+
+    #[ORM\OneToMany(mappedBy: 'astreinteUser', targetEntity: AstreintesUsers::class)]
+    private Collection $astreintes;
+
+    public function __construct()
+    {
+        $this->interventionUser = new ArrayCollection();
+        $this->astreintes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -97,8 +104,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
-
-    
 
         return array_unique($roles);
     }
@@ -242,4 +247,63 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-}
+    /**
+     * @return Collection<int, AstreintesUsers>
+     */
+    public function getAstreintes(): Collection
+    {
+        return $this->astreintes;
+    }
+
+    public function addAstreinte(AstreintesUsers $astreinte): self
+    {
+        if (!$this->astreintes->contains($astreinte)) {
+            $this->astreintes->add($astreinte);
+            $astreinte->setAstreinteUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAstreinte(AstreintesUsers $astreinte): self
+    {
+        if ($this->astreintes->removeElement($astreinte)) {
+            // set the owning side to null (unless already changed)
+            if ($astreinte->getAstreinteUser() === $this) {
+                $astreinte->setAstreinteUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, InterventionUsers>
+     */
+    public function getIntervention(): Collection
+    {
+        return $this->interventionUser;
+    }
+
+    public function addIntervention(Intervention $interventionUser): self
+    {
+        if (!$this->astreintes->contains($interventionUser)) {
+            $this->astreintes->add($interventionUser);
+            $interventionUser->setInterventionUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIntervention(Intervention $interventionUser): self
+    {
+        if ($this->interventionUser->removeElement($interventionUser)) {
+            // set the owning side to null (unless already changed)
+            if ($interventionUser->getInterventionUser() === $this) {
+                $interventionUser->setInterventionUser(null);
+            }
+        }
+
+        return $this;
+    }
+ }

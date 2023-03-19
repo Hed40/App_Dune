@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block title %}AstreintesUsers{% endblock %}
+
+{% block content %}
+
+	<div class="Main_Container">
+		<section class="Perso_Section_Nav">
+			{% include 'account/accountNav.html.twig' %}
+		</section>
+		<section class="Perso_Section_Main">
+			<div class="Personnal_Main_Container">
+    <h1>Mon astreinte</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Date</th>
+                <td>{{ astreintes.Date ? astreintes.Date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>{{ astreintes.Time ? astreintes.Time|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ astreintes.Description }}</td>
+            </tr>
+            <tr>
+                <th>Durée <= 2 min</th>
+                <td>{{ astreintes.Duration1 }}</td>
+            </tr>
+            <tr>
+                <th>Duration > 2 min</th>
+                <td>{{ astreintes.Duration2 }}</td>
+            </tr>
+            <tr>
+                <th>Intervention</th>
+                <td>{{ astreintes.Intervention ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+<div class="d-flex justify-content-center">
+    <a class="btn btn-primary m-3" href="{{ path('app_astreintes_index') }}">Retour</a>
+
+    <a class="btn btn-primary m-3" href="{{ path('app_astreintes_edit', {'id': astreintes.id}) }}">Modifier</a>
+    </div>
+    </section>
+{% endblock %}

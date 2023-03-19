@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une astreinte{% endblock %}
+
+{% block content %}
+
+	<div class="Main_Container">
+		<section class="Perso_Section_Nav">
+			{% include 'account/accountNav.html.twig' %}
+		</section>
+		<section class="Perso_Section_Main">
+			<div class="Personnal_Main_Container">
+	<div class="Submit_Container">
+    <h1>Modifier cette Astreinte</h1>
+
+    {{ include('account/astreintes/_form.html.twig', {'button_label': 'Update'}) }}
+</div>
+                    <div class="d-flex justify-content-center">
+    <a class="btn btn-primary m-3" href="{{ path('app_astreintes_index') }}">Retour</a>
+
+    
+        </div>
+    </div>
+    </section>
+{% endblock %}

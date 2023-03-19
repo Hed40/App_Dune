@@ -12,19 +12,16 @@
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/App_Dune.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/Perso.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/ProgressBar.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/ProgressBar_2.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/ProgressBar_3.css') }}" rel="stylesheet" />
-    {% block stylesheets %}
-    {% endblock %}
   </head>
   <header class="container-fluid">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <h1>
-          Cthulu - Portail de gestion
+          Cthulu V 1.0 beta
         </h1>
         <button class="navbar-toggler"
           type="button"
@@ -73,8 +70,8 @@
     {% endblock %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/mobile.navbar.js') }}"></script>
     <script src="https://kit.fontawesome.com/32bd88b409.js"
       crossorigin="anonymous"></script>
-    
   </body>
 </html>

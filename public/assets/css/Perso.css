@@ -38,97 +38,729 @@ button {
   justify-items: center;
 }
 
-.Main_Container {
-  display: flex;
-  flex-wrap: wrap;
+/*mobile first*/
+@media only screen and (max-width: 850px) {
+  
+  .Personnal_group{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  
+  .Personnal_Title_Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    background-color: rgb(255, 247, 226);
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: inset rgb(94, 26, 28), rgb(231, 223, 201);
+    margin-bottom: 8px;
+    margin-right:4px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    border: solid 3px #56131c;
+    border-radius: 50px;
+    background-color: rgb(255, 249, 235);
+  }
+
+  .Perso_title {
+    width: 300px;
+    font-size: 1.5rem;
+    color: rgb(94, 26, 28);
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .statut_Agent {
+    display: flex;
+    font-size: large;
+  }
+
+  .Personnal_Statut_Container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: rgb(255, 247, 226);
+    justify-items: left;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 50px;
+    margin-bottom: 8px;
+    margin-left: 4px;
+    box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+  }
+
+  .Perso_Section_Nav {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .Perso_Section_Main {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 100%;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .Personnal_SideNav_Container {
+    display: none;
+  }
+
+  .Personnal_SideNav_Container_mobile {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 247, 226);
+    justify-items: left;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 8px;
+    box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+    opacity: 1;
+  }
+
+  .dropdown_calendars,
+  .dropdown_formations,
+  .dropdown_astreintes,
+  .dropdown_regie,
+  .dropdown_settings
+  {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(255, 247, 226);
+    justify-items: left;
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 8px;
+    box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+    transition: opacity 0.3s ease-in-out;
+  
+  }
+
+  .account_navbar_mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .Personnal_Main_Container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-items: left;
+
+    align-items: center;
+    width: 100%;
+    min-height: 800px;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 30px;
+    padding-right: 70px;
+    padding-left: 70px;
+    background-color: rgb(255, 247, 226);
+    box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
+  }
+
+  .Perso_Section_Astreintes {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    min-width: 500px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+  }
+
+  .Personnal_Astreinte_Historique {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-items: center;
+    width: 100%;
+    min-height: 800px;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 30px;
+    padding-right: 70px;
+    padding-left: 70px;
+    margin-top: 8px;
+    background-color: rgb(255, 247, 226);
+    box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
+  }
+
+  .Personnal_Astreinte_Form,
+  .Personnal_Password_Form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-items: center;
+    color: #56131c;
+    max-width: 40%;
+    min-height: 800px;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 30px;
+    padding-right: 70px;
+    padding-left: 70px;
+    background-color: rgb(255, 252, 244, 1);
+    box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
+  }
+
+  .card-deck-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    word-wrap: break-word;
+  }
+
+  .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 32%;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgb(94, 26, 28);
+    border-radius: 10px;
+    margin: 8px;
+    background-color: rgb(255, 252, 244, 1);
+    color: rgb(94, 26, 28);
+  }
+
+  #register_lastname,
+  #register_firstname,
+  #register_email,
+  #register_password_first,
+  #register_password_second {
+    width: 100%;
+  }
+
+  label.form-label.required,
+  .inputEmail {
+    display: grid;
+    width: 100%;
+    justify-items: start;
+    color: rgb(94, 26, 28);
+    font-weight: normal;
+    font-size: medium;
+  }
+
+  .placeholder {
+    color: rgb(94, 26, 28);
+    font-weight: normal;
+    font-size: medium;
+  }
+
+  .btn,
+  .btn-lg,
+  .btn-primary,
+  #register_submit,
+  .btn_New_Astreinte #connexion_submit,
+  .dropdown {
+    display: flex;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: rgb(94, 26, 28);
+    border: rgb(94, 26, 28);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    box-shadow: 0 0 0 0.2rem rgb(94, 26, 28);
+  }
+
+  .btn-primary:focus,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .dropdown,
+  .dropdown-toggle {
+    background-color: rgb(94, 26, 28);
+    border: rgb(94, 26, 28);
+    box-shadow: 0 0 0 0.2rem rgb(94, 26, 28);
+  }
+
+  .form-select {
+    color: rgb(94, 26, 28);
+  }
+
+  option {
+    font-size: small;
+  }
+
+  #circle {
+    width: 300px;
+    height: 300px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 300px;
+    background: rgb(94, 26, 28);
+  }
+
+  .logo {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .form-control:focus {
+    color: rgb(94, 26, 28);
+    background-color: #fff;
+    border-color: rgb(94, 26, 28);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(94, 26, 28, 0.753);
+  }
+
+  ul {
+    list-style: circle;
+  }
+
+  .Statut_List_Title {
+    color: rgb(94, 26, 28);
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .Time_Left_Diag {
+    display: flex;
+    justify-content: center;
+  }
+
+  #account_icons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(94, 26, 28);
+    font-size: 25px;
+    width: 70px;
+    height: 100px;
+  }
+
+  #account_icons:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 249, 235);
+    font-size: 25px;
+    width: 70px;
+    height: 100px;
+  }
+
+  .textAccueil{
+    font-size: small;
+    padding-bottom: 10px;
+  }
+
+  #astreintes_group_icons {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px;
+  }
+
+  #astreintes_icons {
+    display: flex;
+    color: rgb(94, 26, 28);
+    font-size: 18px;
+    justify-content: center;
+    width: 8px;
+    border: none !important;
+  }
+
+  .navbar-items,
+  .dropdown {
+    display: flex;
+    align-items: center;
+  }
+
+.mobile_home,
+.mobile_calendar,
+.mobile_brain,
+.mobile_phone,
+.mobile_coins,
+.mobile_settings{
+  display:flex;
   justify-content: center;
-  width: 100vw;
-  border-radius: 10px;
-  padding-top: 30px;
-  padding-right: 70px;
-  padding-left: 70px;
-  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
 }
 
-.Personnal_Title_Container {
-  display: flex;
-  flex-direction: row;
-  background-color: rgb(255, 247, 226);
-  justify-items: left;
-  align-items: center;
-  width: 400px;
-  border-radius: 10px;
-  border: 1px solid;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  box-shadow: inset rgb(94, 26, 28), rgb(231, 223, 201);
-  margin-bottom: 8px;
+.mobile_home:hover,
+.mobile_calendar:hover,
+.mobile_brain:hover,
+.mobile_phone:hover,
+.mobile_coins:hover,
+.mobile_settings:hover{
+  display:flex;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: #56131c;
 }
 
-.avatar {
-  width: 70px;
-  height: 70px;
-  border: solid 3px #56131c;
-  border-radius: 50px;
-  background-color: rgb(255, 249, 235);
-}
+  .table,
+  th,
+  tr {
+    font-size: small;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #56131c;
+    color: rgb(255, 249, 235);
+    border-radius: 10px;
+  }
 
-.Perso_title {
-  width: 300px;
-  font-size: 1.5rem;
-  color: rgb(94, 26, 28);
-  text-align: left;
-  padding-left: 20px;
-}
+  td {
+    font-size: small;
+    text-align: center;
+    background-color: rgb(255, 249, 235);
+    border: 0, 5px solid;
+    color: #56131c;
+  }
+  .motif {
+    text-align: left;
+  }
 
-.Personnal_Statut_Container {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(255, 247, 226);
-  justify-items: left;
-  width: 400px;
-  min-height: 200px;
-  border-radius: 10px;
-  border: 1px solid;
-  padding-top: 20px;
-  padding-right: 30px;
-  padding-left: 50px;
-  margin-bottom: 8px;
-  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
-}
-.Personnal_SideNav_Container {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(255, 247, 226);
-  justify-items: left;
-  width: 400px;
-  min-height: 800px;
-  border-radius: 10px;
-  border: 1px solid;
-  padding-top: 20px;
-  padding-right: 30px;
-  padding-left: 50px;
-  box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
-}
-.Perso_Section_Nav {
-  display: flex;
-  flex-direction: column;
-  margin-right: 8px;
-  margin-left: 8px;
-  margin-bottom: 8px;
-}
+  .filter {
+    color: #56131c;
+    font-weight: bold;
+  }
 
-.Perso_Section_Main {
-  display: flex;
-  flex-wrap: wrap;
-  width: 70%;
-  min-width: 500px;
-  margin-bottom: 8px;
-  border-radius: 10px;
-}
+  .pagination,
+  .page-item,
+  .page-link {
+    color: #56131c;
+  }
+  /**/
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
-@media (min-width: 1250px) {
+  .navbar,
+  .navbar-collapse,
+  .navbar-expand-lg {
+    display: flex;
+    background-color: rgb(94, 26, 28);
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    color: rgb(255, 247, 226);
+  }
+
+  .nav-item {
+    display: grid;
+  }
+
+  body {
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: rgb(94, 26, 28);
+    display: grid;
+    justify-items: center;
+  }
+  .mb-3,
+  .mb-4,
+  button {
+    display: grid;
+    justify-items: center;
+  }
+
+  .Submit_Container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 251, 239);
+    justify-items: center;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-right: 70px;
+    padding-left: 70px;
+    box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+  }
+
+  #register_lastname,
+  #register_firstname,
+  #register_email,
+  #register_password_first,
+  #register_password_second {
+    width: 100%;
+  }
+
+  label.form-label.required,
+  .inputEmail {
+    display: grid;
+    width: 100%;
+    justify-items: start;
+    color: rgb(94, 26, 28);
+    font-weight: normal;
+    font-size: medium;
+  }
+
+  .placeholder {
+    color: rgb(94, 26, 28);
+    font-weight: normal;
+    font-size: medium;
+  }
+
+  h1 {
+    width: 300px;
+    font-size: 1rem;
+    color: rgb(255, 247, 226);
+    text-align: start;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: rgb(255, 247, 226);
+    text-align: start;
+    margin-top: 2%;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    color: rgb(94, 26, 28);
+    text-align: center;
+    font-size: 1.5rem;
+    word-wrap: normal;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-right: 20px;
+  }
+
+  h4 {
+    color: rgb(94, 26, 28);
+    text-align: start;
+    font-size: 1rem;
+    word-wrap: normal;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-right: 20px;
+  }
+
+  .form-select {
+    color: rgb(94, 26, 28);
+  }
+
+  option {
+    font-size: small;
+  }
+
+  #circle {
+    width: 300px;
+    height: 300px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 300px;
+    background: rgb(94, 26, 28);
+  }
+
+  .logo {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgb(94, 26, 28);
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0.5px solid rgb(94, 26, 28);
+    border-radius: 0.3rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: rgb(94, 26, 28);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(94, 26, 28, 0.753);
+  }
+
+  .version {
+    display: grid;
+    justify-content: center;
+    color: rgb(94, 26, 28);
+  }
+
+  .checkbox {
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+    color: rgb(94, 26, 28);
+  }
+
+  .forgotten_password {
+    font-size: small;
+    color: rgb(94, 26, 28);
+  }
+
+  /**/
+}
+/*Version desktop*/
+@media only screen and (min-width: 851px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar,
+  .navbar-collapse,
+  .navbar-expand-lg {
+    display: flex;
+    background-color: rgb(94, 26, 28);
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    color: rgb(255, 247, 226);
+  }
+
+  .nav-item {
+    display: grid;
+  }
+
+  body {
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: rgb(94, 26, 28);
+    display: grid;
+    justify-items: center;
+  }
+  .mb-3,
+  .mb-4,
+  button {
+    display: grid;
+    justify-items: center;
+  }
+
+  .Main_Container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-right: 70px;
+    padding-left: 70px;
+    box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+  }
+  .Personnal_Title_Container {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 247, 226);
+    justify-items: left;
+    align-items: center;
+    width: 400px;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    box-shadow: inset rgb(94, 26, 28), rgb(231, 223, 201);
+    margin-bottom: 8px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    border: solid 3px #56131c;
+    border-radius: 50px;
+    background-color: rgb(255, 249, 235);
+  }
+
+  .Perso_title {
+    width: 300px;
+    font-size: 1.5rem;
+    color: rgb(94, 26, 28);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .Personnal_Statut_Container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 247, 226);
+    justify-items: left;
+    width: 400px;
+    min-height: 200px;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-left: 50px;
+    margin-bottom: 8px;
+    box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+  }
+  .Personnal_SideNav_Container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 247, 226);
+    justify-items: left;
+    width: 400px;
+    min-height: 800px;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-left: 50px;
+    box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+  }
+
+  .Personnal_SideNav_Container_mobile {
+    display: none;
+  }
+
+  .Perso_Section_Nav {
+    display: flex;
+    flex-direction: column;
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+
   .Perso_Section_Main {
     display: flex;
     flex-wrap: nowrap;
@@ -137,260 +769,462 @@ button {
     margin-bottom: 8px;
     border-radius: 10px;
   }
-}
 
-.Personnal_Main_Container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-items: left;
-  width: 100%;
-  min-height: 800px;
-  border-radius: 10px;
-  border: 1px solid;
-  padding-top: 30px;
-  padding-right: 70px;
-  padding-left: 70px;
-  background-color: rgb(255, 247, 226);
-  box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
-}
+  .Perso_Section_Nav {
+    display: flex;
+    flex-direction: column;
+    margin-right: 8px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+  }
+  .Personnal_Main_Container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-items: left;
 
-.Perso_Section_Astreintes {
-  display: flex;
-  flex-wrap: wrap;
-  width: 70%;
-  min-width: 500px;
-  margin-bottom: 8px;
-  border-radius: 10px;
-}
+    align-items: center;
+    width: 100%;
+    min-height: 800px;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 30px;
+    padding-right: 70px;
+    padding-left: 70px;
+    background-color: rgb(255, 247, 226);
+    box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
+  }
 
-@media (min-width: 1250px) {
   .Perso_Section_Astreintes {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     width: 70%;
     min-width: 500px;
     margin-bottom: 8px;
     border-radius: 10px;
   }
-}
 
-.Personnal_Astreinte_Historique {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-items: center;
-  width: 100%;
-  min-height: 800px;
-  border-radius: 10px;
-  border: 1px solid;
-  padding-top: 30px;
-  padding-right: 70px;
-  padding-left: 70px;
-  margin-top: 8px;
-  background-color: rgb(255, 247, 226);
-  box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
-}
-
-.Personnal_Astreinte_Form {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-items: center;
-  color:#56131c;
- max-width: 40%;
-  min-height: 800px;
-  border-radius: 10px;
-  border: 1px solid;
-  padding-top: 30px;
-  padding-right: 70px;
-  padding-left: 70px;
-  background-color: rgb(255, 252, 244, 1);
-  box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
-}
-@media (min-width: 1250px) {
-  .Personnal_Astreinte_Historique {
-    margin-left: 8px;
-    margin-top: 0;
+  @media (min-width: 1250px) {
+    .Perso_Section_Astreintes {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 70%;
+      min-width: 500px;
+      margin-bottom: 8px;
+      border-radius: 10px;
+    }
   }
-}
-.card-deck-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  word-wrap: break-word;
-}
 
-@media (min-width: 1250px) {
+  .Personnal_Astreinte_Historique {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-items: center;
+    width: 100%;
+    min-height: 800px;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 30px;
+    padding-right: 70px;
+    padding-left: 70px;
+    margin-top: 8px;
+    background-color: rgb(255, 247, 226);
+    box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
+  }
+
+  .Personnal_Astreinte_Form,
+  .Personnal_Password_Form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-items: center;
+    color: #56131c;
+    max-width: 40%;
+    min-height: 800px;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 30px;
+    padding-right: 70px;
+    padding-left: 70px;
+    background-color: rgb(255, 252, 244, 1);
+    box-shadow: inset rgb(94, 26, 28), rgb(87, 86, 84);
+  }
+
+  @media (min-width: 1250px) {
+    .Personnal_Astreinte_Historique {
+      margin-left: 8px;
+      margin-top: 0;
+    }
+  }
   .card-deck-wrapper {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
     word-wrap: break-word;
   }
-}
-.card {
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 32%;
-  word-wrap: break-word;
-  background-clip: border-box;
-  border: 1px solid rgb(94, 26, 28);
-  border-radius: 10px;
-  margin: 8px;
-  background-color: rgb(255, 252, 244, 1);
-  color: rgb(94, 26, 28);
-}
 
-#register_lastname,
-#register_firstname,
-#register_email,
-#register_password_first,
-#register_password_second {
-  width: 100%;
-}
+  @media (min-width: 1250px) {
+    .card-deck-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      width: 100%;
+      word-wrap: break-word;
+    }
+  }
+  .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 32%;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgb(94, 26, 28);
+    border-radius: 10px;
+    margin: 8px;
+    background-color: rgb(255, 252, 244, 1);
+    color: rgb(94, 26, 28);
+  }
 
-label.form-label.required,
-.inputEmail {
-  display: grid;
-  width: 100%;
-  justify-items: start;
-  color: rgb(94, 26, 28);
-  font-weight: normal;
-  font-size: medium;
-}
+  #register_lastname,
+  #register_firstname,
+  #register_email,
+  #register_password_first,
+  #register_password_second {
+    width: 100%;
+  }
 
-.placeholder {
-  color: rgb(94, 26, 28);
-  font-weight: normal;
-  font-size: medium;
-}
+  label.form-label.required,
+  .inputEmail {
+    display: grid;
+    width: 100%;
+    justify-items: start;
+    color: rgb(94, 26, 28);
+    font-weight: normal;
+    font-size: medium;
+  }
 
-.btn,
-.btn-lg,
-.btn-primary,
-#register_submit,
-#connexion_submit,
-.btn-primary:focus,
-.btn-primary:hover,
-.dropdown  {
-  width: 150px;
-  height: 50px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  background-color: rgb(94, 26, 28);
-  border: rgb(94, 26, 28);
-}
+  .placeholder {
+    color: rgb(94, 26, 28);
+    font-weight: normal;
+    font-size: medium;
+  }
 
-.form-select {
-  color: rgb(94, 26, 28);
-}
+  .btn,
+  .btn-lg,
+  .btn-primary,
+  #register_submit,
+  .btn_New_Astreinte #connexion_submit,
+  .dropdown {
+    display: flex;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: rgb(94, 26, 28);
+    border: rgb(94, 26, 28);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    box-shadow: 0 0 0 0.2rem rgb(94, 26, 28);
+  }
 
-option {
-  font-size: small;
-}
+  .btn-primary:focus,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .dropdown,
+  .dropdown-toggle {
+    background-color: rgb(94, 26, 28);
+    border: rgb(94, 26, 28);
+    box-shadow: 0 0 0 0.2rem rgb(94, 26, 28);
+  }
 
-#circle {
-  width: 300px;
-  height: 300px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  border-radius: 300px;
-  background: rgb(94, 26, 28);
-}
+  .form-select {
+    color: rgb(94, 26, 28);
+  }
 
-.logo {
-  max-width: 200px;
-  max-height: 200px;
-}
+  option {
+    font-size: small;
+  }
 
-.form-control:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: rgb(94, 26, 28);
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(94, 26, 28, 0.753);
-}
+  #circle {
+    width: 300px;
+    height: 300px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 300px;
+    background: rgb(94, 26, 28);
+  }
 
-ul {
-  list-style: circle;
-}
+  .logo {
+    max-width: 200px;
+    max-height: 200px;
+  }
 
-.Statut_List_Title {
-  color: rgb(94, 26, 28);
-  font-weight: bold;
-  font-size: 1rem;
-}
+  .form-control:focus {
+    color: rgb(94, 26, 28);
+    background-color: #fff;
+    border-color: rgb(94, 26, 28);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(94, 26, 28, 0.753);
+  }
 
-.Time_Left_Diag {
-  display: flex;
-  justify-content: center;
-}
+  ul {
+    list-style: circle;
+  }
 
-#account_icons {
-  display: flex;
-  color: rgb(94, 26, 28);
-  font-size: 25px;
-  width: 50px;
-}
-#astreintes_group_icons {
-  display: flex;
-  justify-content: space-between;
-  margin: 2px;
-}
+  .Statut_List_Title {
+    color: rgb(94, 26, 28);
+    font-weight: bold;
+    font-size: 1rem;
+  }
 
-#astreintes_icons {
-  display: flex;
-  color: rgb(94, 26, 28);
-  font-size: 18px;
-  justify-content: center;
-  width:8px;
+  .Time_Left_Diag {
+    display: flex;
+    justify-content: center;
+  }
+
+  #account_icons {
+    display: flex;
+    color: rgb(94, 26, 28);
+    font-size: 25px;
+    width: 50px;
+  }
+  #astreintes_group_icons {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px;
+  }
+
+  #astreintes_icons {
+    display: flex;
+    color: rgb(94, 26, 28);
+    font-size: 18px;
+    justify-content: center;
+    width: 8px;
+    border: none !important;
+  }
+
+  .navbar-items,
+  .dropdown {
+    display: flex;
+    align-items: center;
+  }
+
+  .account_navbar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .table,
+  th,
+  tr {
+    font-size: small;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #56131c;
+    color: rgb(255, 249, 235);
+    border-radius: 10px;
+  }
+
+  td {
+    font-size: small;
+    text-align: center;
+    background-color: rgb(255, 249, 235);
+    border: 0, 5px solid;
+    color: #56131c;
+  }
+  .motif {
+    text-align: left;
+  }
+
+  .filter {
+    color: #56131c;
+    font-weight: bold;
+  }
+
+  .pagination,
+  .page-item,
+  .page-link {
+    color: #56131c;
+  }
+  /**/
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar,
+  .navbar-collapse,
+  .navbar-expand-lg {
+    display: flex;
+    background-color: rgb(94, 26, 28);
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    color: rgb(255, 247, 226);
+  }
+
+  .nav-item {
+    display: grid;
+  }
+
+  body {
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: rgb(94, 26, 28);
+    display: grid;
+    justify-items: center;
+  }
+  .mb-3,
+  .mb-4,
+  button {
+    display: grid;
+    justify-items: center;
+  }
+
+  .Submit_Container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 251, 239);
+    justify-items: center;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-top: 30px;
+    padding-right: 70px;
+    padding-left: 70px;
+    box-shadow: inset rgb(94, 26, 28), rgb(255, 247, 226);
+  }
+
+  #register_lastname,
+  #register_firstname,
+  #register_email,
+  #register_password_first,
+  #register_password_second {
+    width: 100%;
+  }
+
+  label.form-label.required,
+  .inputEmail {
+    display: grid;
+    width: 100%;
+    justify-items: start;
+    color: rgb(94, 26, 28);
+    font-weight: normal;
+    font-size: medium;
+  }
+
+  .placeholder {
+    color: rgb(94, 26, 28);
+    font-weight: normal;
+    font-size: medium;
+  }
+
+  h1 {
+    width: 300px;
+    font-size: 1rem;
+    color: rgb(255, 247, 226);
+    text-align: start;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: rgb(255, 247, 226);
+    text-align: start;
+    margin-top: 2%;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    color: rgb(94, 26, 28);
+    text-align: center;
+    font-size: 1.5rem;
+    word-wrap: normal;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-right: 20px;
+  }
+
+  h4 {
+    color: rgb(94, 26, 28);
+    text-align: start;
+    font-size: 1rem;
+    word-wrap: normal;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-right: 20px;
+  }
+
+  .form-select {
+    color: rgb(94, 26, 28);
+  }
+
+  option {
+    font-size: small;
+  }
+
+  #circle {
+    width: 300px;
+    height: 300px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 300px;
+    background: rgb(94, 26, 28);
+  }
+
+  .logo {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgb(94, 26, 28);
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0.5px solid rgb(94, 26, 28);
+    border-radius: 0.3rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: rgb(94, 26, 28);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(94, 26, 28, 0.753);
+  }
+
+  .version {
+    display: grid;
+    justify-content: center;
+    color: rgb(94, 26, 28);
+  }
+
+  .checkbox {
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+    color: rgb(94, 26, 28);
+  }
+
+  .forgotten_password {
+    font-size: small;
+    color: rgb(94, 26, 28);
+  }
 }
-
-.navbar-items,
-.dropdown {
-  display: flex;
-  align-items: center;
-}
-
-.account_navbar {
-  display: flex;
-  flex-direction: column;
-}
-
-.table,
-th,
-tr {
-  text-align: center;
- 
-  vertical-align: middle;
-  background-color: #56131c;
-  color: rgb(255, 249, 235);
-  border-radius: 10px;
-}
-
-td
-{
-  text-align: center;
-  background-color:rgb(255, 249, 235) ;
-  border: 0,5px solid;
-  color: #56131c;
-
-}
-
-.filter{
-  color:#56131c;
-  font-weight: bold;
-}
-
-
-.pagination,
-.page-item,
-.page-link{
-  color:#56131c;
-}
-/**/

@@ -14,159 +14,113 @@ class AstreintesUsers
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'astreintes_users')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $user = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $Nom = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $Prenom = null;
-
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $date = null;
+    private ?\DateTimeInterface $Date = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $heure = null;
+    #[ORM\Column(type: Types::TIME_MUTABLE)]
+    private ?\DateTimeInterface $Time = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $Description = null;
 
     #[ORM\Column]
-    private ?int $duree_1 = null;
+    private ?int $Duration_1 = null;
 
     #[ORM\Column]
-    private ?int $duree_2 = null;
+    private ?int $Duration_2 = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $motif_appel = null;
+    #[ORM\Column(nullable: true)]
+    private ?bool $Intervention = null;
 
-    #[ORM\Column(type: Types::SMALLINT, nullable: true)]
-    private ?int $intervention = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $motif_intervention = null;
-
+    #[ORM\ManyToOne(inversedBy: 'astreintes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $astreinteUser = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    public function getNom(): ?string
-    {
-        return $this->Nom;
-    }
-
-    public function setNom(string $Nom): self
-    {
-        $this->Nom = $Nom;
-
-        return $this;
-    }
-
-    public function getPrenom(): ?string
-    {
-        return $this->Prenom;
-    }
-
-    public function setPrenom(string $Prenom): self
-    {
-        $this->Prenom = $Prenom;
-
-        return $this;
-    }
-
     public function getDate(): ?\DateTimeInterface
     {
-        return $this->date;
+        return $this->Date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDate(\DateTimeInterface $Date): self
     {
-        $this->date = $date;
+        $this->Date = $Date;
 
         return $this;
     }
 
-    public function getHeure(): ?\DateTimeInterface
+    public function getTime(): ?\DateTimeInterface
     {
-        return $this->heure;
+        return $this->Time;
     }
 
-    public function setHeure(\DateTimeInterface $heure): self
+    public function setTime(\DateTimeInterface $Time): self
     {
-        $this->heure = $heure;
+        $this->Time = $Time;
 
         return $this;
     }
 
-    public function getDuree1(): ?int
+    public function getDescription(): ?string
     {
-        return $this->duree_1;
+        return $this->Description;
     }
 
-    public function setDuree1(int $duree_1): self
+    public function setDescription(string $Description): self
     {
-        $this->duree_1 = $duree_1;
+        $this->Description = $Description;
 
         return $this;
     }
 
-    public function getDuree2(): ?int
+    public function getDuration1(): ?int
     {
-        return $this->duree_2;
+        return $this->Duration_1;
     }
 
-    public function setDuree2(int $duree_2): self
+    public function setDuration1(int $Duration_1): self
     {
-        $this->duree_2 = $duree_2;
+        $this->Duration_1 = $Duration_1;
 
         return $this;
     }
 
-    public function getMotifAppel(): ?string
+    public function getDuration2(): ?int
     {
-        return $this->motif_appel;
+        return $this->Duration_2;
     }
 
-    public function setMotifAppel(string $motif_appel): self
+    public function setDuration2(int $Duration_2): self
     {
-        $this->motif_appel = $motif_appel;
+        $this->Duration_2 = $Duration_2;
 
         return $this;
     }
 
-    public function getIntervention(): ?int
+    public function isIntervention(): ?bool
     {
-        return $this->intervention;
+        return $this->Intervention;
     }
 
-    public function setIntervention(?int $intervention): self
+    public function setIntervention(?bool $Intervention): self
     {
-        $this->intervention = $intervention;
+        $this->Intervention = $Intervention;
 
         return $this;
     }
 
-    public function getMotifIntervention(): ?string
+    public function getAstreinteUser(): ?User
     {
-        return $this->motif_intervention;
+        return $this->astreinteUser;
     }
 
-    public function setMotifIntervention(?string $motif_intervention): self
+    public function setAstreinteUser(?User $astreinteUser): self
     {
-        $this->motif_intervention = $motif_intervention;
+        $this->astreinteUser = $astreinteUser;
 
         return $this;
     }

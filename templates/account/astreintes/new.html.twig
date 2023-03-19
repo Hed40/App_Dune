@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouvelle astreinte
-{% endblock %}
+{% block title %}Créer une astreinte{% endblock %}
 
 {% block content %}
 	<div class="Main_Container">
 		<section class="Perso_Section_Nav">
 			{% include 'account/accountNav.html.twig' %}
-		</section>
+			</section>
 		<section class="Perso_Section_Main">
 			<div class="Personnal_Main_Container">
-				{{ include('account/astreintes/form.html.twig') }}
-			</div>
-		</div>
-	</section>
-</div>{% endblock %}
+				<div class="Submit_Container">
+    				<h1>Créer une astreintes</h1>
+    					{{ include('account/astreintes/_form.html.twig') }}
+							</div>
+    							<a class="btn btn-primary" href="{{ path('app_astreintes_index') }}">Retour</a>
+									</div>
+    									</section>
+{% endblock %}

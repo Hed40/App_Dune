@@ -5,6 +5,10 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use PhpParser\Node\Expr\Cast\Array_;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -21,6 +25,7 @@ class UserCrudController extends AbstractCrudController
             TextField::new('lastname'),
             TextField::new('firstname'),
             TextField::new('email'),
+            TextField::new('password'),
             TextField::new('Categorie'),
             TextField::new('Grade'),
             TextField::new('Service'),
@@ -28,7 +33,7 @@ class UserCrudController extends AbstractCrudController
             TextField::new('heures'),
             TextField::new('ARTT'),
             TextField::new('CP'),
-
         ];
     }
+    
 }

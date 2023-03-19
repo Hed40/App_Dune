@@ -33,15 +33,14 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/admin, roles: ROLE_TECH }
+        - { path: ^/mon_compte/astreintes, roles: ROLE_ASTREINTES }
         - { path: ^/mon_compte, roles: ROLE_USER }
 
     role_hierarchy:
         ROLE_TECH: ROLE_TECH
         ROLE_ADMIN: ROLE_ADMIN
+        ROLE_ASTREINTES: ROLE_ASTREINTES
         ROLE_USER: ROLE_USER
-        
-        
-
 
 when@test:
     security:
@@ -55,3 +54,5 @@ when@test:
                 cost: 4 # Lowest possible value for bcrypt
                 time_cost: 3 # Lowest possible value for argon
                 memory_cost: 10 # Lowest possible value for argon
+
+
